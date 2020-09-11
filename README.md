@@ -1,3 +1,8 @@
 # Miscellaneous Jupyter Notebooks
 
-Open with [nbviewer](https://nbviewer.jupyter.org/github/beginnerSC/misc/tree/master/) or [JupyterLab](https://mybinder.org/v2/gh/beginnerSC/misc/master?urlpath=lab) or [Gitpod](https://gitpod.io/#https://github.com/beginnerSC/misc).
+Open with one of the following
+
+* [nbviewer](https://nbviewer.jupyter.org/github/beginnerSC/misc/tree/master/)
+* [Kyso](https://kyso.io/beginnerSC/misc#files)
+* [JupyterLab](https://mybinder.org/v2/gh/beginnerSC/misc/master?urlpath=lab)
+* [Gitpod](https://gitpod.io/#https://github.com/beginnerSC/misc)
