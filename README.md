@@ -3,8 +3,6 @@
 Open with one of the following: 
 
 * [nbviewer](https://nbviewer.jupyter.org/github/beginnerSC/misc/tree/master/)
-* [Kyso](https://kyso.io/beginnerSC/misc)
+* [Kyso](https://kyso.io/beginnerSC/misc#files)
 * [JupyterLab](https://mybinder.org/v2/gh/beginnerSC/misc/master?urlpath=lab)
 * [Gitpod](https://gitpod.io/#https://github.com/beginnerSC/misc)
-
-aaa
