@@ -6,3 +6,4 @@ Open with one of the following:
 * [Kyso](https://kyso.io/beginnerSC/misc/file/README.md)
 * [JupyterLab](https://mybinder.org/v2/gh/beginnerSC/misc/master?urlpath=lab)
 * [Gitpod](https://gitpod.io/#https://github.com/beginnerSC/misc)
+* [GitHub](https://github.com/beginnerSC/misc)
