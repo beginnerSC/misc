@@ -1,0 +1,19 @@
+name: xeus-cling
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - scipy
+  - pandas
+  - seaborn
+  - matplotlib
+  - bokeh
+  - xeus-cling=0.10.0
+  - xtensor=0.21.2
+  - xtensor-blas=0.17.1
+  - notebook
+  - jupyter-offlinenotebook  
+  - nbgitpuller
+  - xeus-python=0.8.0 
+  - ptvsd 
+  - nodejs
