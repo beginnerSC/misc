@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Inverse Mills Ratio &mdash; MiscBeginnerSC 0.1 documentation</title>
+  <title>Fun Math &mdash; MiscBeginnerSC 0.1 documentation</title>
   
 
   
@@ -38,7 +38,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EM Algorithm for Gaussian Mixture" href="GMM.html" />
+    <link rel="prev" title="DS and Algo" href="DS%20and%20Algo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,20 +85,74 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Inverse Mills Ratio</a></li>
-<li><a class="reference internal" href="#Calculate-the-41st-Root-in-1-Second">Calculate the 41st Root in 1 Second</a></li>
-<li><a class="reference internal" href="#3^4-vs. 4^3-which-one-is-bigger?"><span class="math notranslate nohighlight">\(3^4\)</span> vs. <span class="math notranslate nohighlight">\(4^3\)</span> which one is bigger?</a></li>
-<li><a class="reference internal" href="#複數直式開平方法">複數直式開平方法</a><ul>
-<li><a class="reference internal" href="#第一位算法">第一位算法</a></li>
-<li><a class="reference internal" href="#已知目前位數-a_0,-b_0-求下一位-a_1,-b_1-的算法">已知目前位數 <span class="math notranslate nohighlight">\(a_0, b_0\)</span> 求下一位 <span class="math notranslate nohighlight">\(a_1, b_1\)</span> 的算法</a></li>
-<li><a class="reference internal" href="#上面那堆都是垃圾">上面那堆都是垃圾</a></li>
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Backprop.html">Backpropagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bokeh.html">Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CPP.html">Notes on The Cherno C++ Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DS%20and%20Algo.html">DS and Algo</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fun Math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Inverse-Mills-Ratio">Inverse Mills Ratio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Calculate-the-41st-Root-in-1-Second">Calculate the 41st Root in 1 Second</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#3^4-vs. 4^3-which-one-is-bigger?"><span class="math notranslate nohighlight">\(3^4\)</span> vs. <span class="math notranslate nohighlight">\(4^3\)</span> which one is bigger?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#複數直式開平方法">複數直式開平方法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#第一位算法">第一位算法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#已知目前位數-a_0,-b_0-求下一位-a_1,-b_1-的算法">已知目前位數 <span class="math notranslate nohighlight">\(a_0, b_0\)</span> 求下一位 <span class="math notranslate nohighlight">\(a_1, b_1\)</span> 的算法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#上面那堆都是垃圾">上面那堆都是垃圾</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#\cos(1^\circ)-in-Closed-Form"><span class="math notranslate nohighlight">\(\cos(1^\circ)\)</span> in Closed Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#\cos(1^\circ)-in-Closed-Form"><span class="math notranslate nohighlight">\(\cos(1^\circ)\)</span> in Closed Form</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GMM.html">EM Algorithm for Gaussian Mixture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html">Misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#Writing-Python-Module-in-C++">Writing Python Module in C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#駕照到期日延到-12/31">駕照到期日延到 12/31</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#JupyterLab">JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#Youtube-Keyboard-Shortcuts">Youtube Keyboard Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#Kinesis-Advantage2-Programming-the-Keyboard">Kinesis Advantage2 Programming the Keyboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#GitHub">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#Set-up-JupyterHub-on-Google-Cloud-Step-By-Step">Set up JupyterHub on Google Cloud Step By Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html#JupyterLab-in-the-Cloud">JupyterLab in the Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Piano.html">Piano Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html">Coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Programming-Language">Programming Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Resume">Resume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Probability">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Statistics">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Regression">Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Machine-Learning">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Linear-Algebra">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Brain-Teaser">Brain Teaser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Option-Pricing">Option Pricing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_m.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Theory.html">BM Quadratic Variation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Theory.html#SV-Models">SV Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Theory.html#Empirically…">Empirically…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Theory.html#Penalty-Method-for-American-Put-Pricing">Penalty Method for American Put Pricing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Untitled.html">Not All LeetCode Questions are Created Equal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Untitled.html#Gauss-Quadrature">Gauss Quadrature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/19.html">19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html">728. Self Dividing Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1281.-Subtract-the-Product-and-Sum-of-Digits-of-an-Integer">1281. Subtract the Product and Sum of Digits of an Integer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1512.-Number-of-Good-Pairs">1512. Number of Good Pairs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1470.-Shuffle-the-Array">1470. Shuffle the Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1480.-Running-Sum-of-1d-Array">1480. Running Sum of 1d Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#344.-Reverse-String">344. Reverse String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#557.-Reverse-Words-in-a-String-III">557. Reverse Words in a String III</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#657.-Robot-Return-to-Origin">657. Robot Return to Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1309.-Decrypt-String-from-Alphabet-to-Integer-Mapping">1309. Decrypt String from Alphabet to Integer Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1436.-Destination-City">1436. Destination City</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#804.-Unique-Morse-Code-Words">804. Unique Morse Code Words</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#709.-To-Lower-Case">709. To Lower Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1108.-Defanging-an-IP-Address">1108. Defanging an IP Address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/DP.html">198. House Robber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/DP.html#72.-Edit-Distance">72. Edit Distance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html">239. Sliding Window Maximum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html#171.-Excel-Sheet-Column-Number">171. Excel Sheet Column Number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html#46.-Permutations">46. Permutations</a></li>
+</ul>
+
             
           
         </div>
@@ -141,7 +197,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Inverse Mills Ratio</li>
+      <li>Fun Math</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -415,8 +471,10 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
+<div class="section" id="Fun-Math">
+<h1>Fun Math<a class="headerlink" href="#Fun-Math" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Inverse-Mills-Ratio">
-<h1>Inverse Mills Ratio<a class="headerlink" href="#Inverse-Mills-Ratio" title="Permalink to this headline">¶</a></h1>
+<h2>Inverse Mills Ratio<a class="headerlink" href="#Inverse-Mills-Ratio" title="Permalink to this headline">¶</a></h2>
 <p>We have the conditional expectation <span class="math">\begin{eqnarray*}
 E[X|X>K] &=& \frac{f_X(K)}{1-F_X(K)}, \\
 E[X|X<K] &=& -\frac{f_X(K)}{F_X(K)},
@@ -449,7 +507,7 @@ E[X|X<K] &=& -\frac{f_X(K)}{F_X(K)},
 </div>
 </div>
 <div class="section" id="Calculate-the-41st-Root-in-1-Second">
-<h1>Calculate the 41st Root in 1 Second<a class="headerlink" href="#Calculate-the-41st-Root-in-1-Second" title="Permalink to this headline">¶</a></h1>
+<h2>Calculate the 41st Root in 1 Second<a class="headerlink" href="#Calculate-the-41st-Root-in-1-Second" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
@@ -501,7 +559,7 @@ E[X|X<K] &=& -\frac{f_X(K)}{F_X(K)},
 </div>
 </div>
 <div class="section" id="3^4-vs. 4^3-which-one-is-bigger?">
-<h1><span class="math notranslate nohighlight">\(3^4\)</span> vs. <span class="math notranslate nohighlight">\(4^3\)</span> which one is bigger?<a class="headerlink" href="#3^4-vs. 4^3-which-one-is-bigger?" title="Permalink to this headline">¶</a></h1>
+<h2><span class="math notranslate nohighlight">\(3^4\)</span> vs. <span class="math notranslate nohighlight">\(4^3\)</span> which one is bigger?<a class="headerlink" href="#3^4-vs. 4^3-which-one-is-bigger?" title="Permalink to this headline">¶</a></h2>
 <p>（和<a class="reference external" href="https://www.youtube.com/watch?v=L0XY6llSzyo">常見的微分作法</a>不同）</p>
 <p><span class="math">\begin{eqnarray*}
 \frac{d}{da} a^b &=& a^b\left(\frac{b}{a}\right)\\
@@ -514,11 +572,11 @@ a^{b+h} &\approx& a^b + h(a^b\ln a)
 <p>泰展多寫幾項也可以比出 <span class="math notranslate nohighlight">\(e^{\pi} &gt; \pi^e\)</span>。和微分作法一樣可以推出更一般的結論：當指數和底數都大於 <span class="math notranslate nohighlight">\(e\)</span> 時，指數比較大者數值就比較大。但像 <span class="math notranslate nohighlight">\(2.5^3\)</span> 和 <span class="math notranslate nohighlight">\(3^{2.5}\)</span> 這種兩個數分別在 <span class="math notranslate nohighlight">\(e\)</span> 的左右時微分作法比不出來，這裡的泰展作法比較好比。不過泰展本來就是在計算數值，有點作弊。</p>
 </div>
 <div class="section" id="複數直式開平方法">
-<h1>複數直式開平方法<a class="headerlink" href="#複數直式開平方法" title="Permalink to this headline">¶</a></h1>
+<h2>複數直式開平方法<a class="headerlink" href="#複數直式開平方法" title="Permalink to this headline">¶</a></h2>
 <p><span class="math notranslate nohighlight">\(\sqrt{2+17i} = 3.0917 + 2.74929i\)</span>.</p>
 <p>雖然計算複雜但可以算出來：</p>
 <div class="section" id="第一位算法">
-<h2>第一位算法<a class="headerlink" href="#第一位算法" title="Permalink to this headline">¶</a></h2>
+<h3>第一位算法<a class="headerlink" href="#第一位算法" title="Permalink to this headline">¶</a></h3>
 <p>虛部為 <span class="math notranslate nohighlight">\(b\)</span> 的水平線平方參數式：<span class="math notranslate nohighlight">\((t+bi)^2 = t^2-b^2 + 2bti\)</span>。令 <span class="math notranslate nohighlight">\(x=t^2-b^2, y=2bt\)</span>，消去 <span class="math notranslate nohighlight">\(t\)</span> 得方程式</p>
 <div class="math notranslate nohighlight">
 \[\left(\frac{y}{2b}\right)^2- b^2 = x,\]</div>
@@ -534,7 +592,7 @@ a = \left\lfloor\sqrt{\frac{\sqrt{x^2+y^2}+x}{2}}\right\rfloor, \quad b = \left\
 \end{eqnarray*}</span> 但用這兩個式子並不會比較好算。</p>
 </div>
 <div class="section" id="已知目前位數-a_0,-b_0-求下一位-a_1,-b_1-的算法">
-<h2>已知目前位數 <span class="math notranslate nohighlight">\(a_0, b_0\)</span> 求下一位 <span class="math notranslate nohighlight">\(a_1, b_1\)</span> 的算法<a class="headerlink" href="#已知目前位數-a_0,-b_0-求下一位-a_1,-b_1-的算法" title="Permalink to this headline">¶</a></h2>
+<h3>已知目前位數 <span class="math notranslate nohighlight">\(a_0, b_0\)</span> 求下一位 <span class="math notranslate nohighlight">\(a_1, b_1\)</span> 的算法<a class="headerlink" href="#已知目前位數-a_0,-b_0-求下一位-a_1,-b_1-的算法" title="Permalink to this headline">¶</a></h3>
 <p>虛部必須滿足 <span class="math notranslate nohighlight">\(b^4 + xb^2 \leq y^2/4\)</span>。放大 <span class="math notranslate nohighlight">\(10^4\)</span> 倍並令 <span class="math notranslate nohighlight">\(b_0=2, b=10b_0+b_1\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[(10b_0+b_1)^4 + 100x(10b_0+b_1)^2 \leq 10^4(y^2/4)\]</div>
@@ -552,7 +610,7 @@ a = \left\lfloor\sqrt{\frac{\sqrt{x^2+y^2}+x}{2}}\right\rfloor, \quad b = \left\
 <p>求 <span class="math notranslate nohighlight">\(a_1\)</span> 的算法類似，只要把上面所有不等式的 <span class="math notranslate nohighlight">\(x\)</span> 改成 <span class="math notranslate nohighlight">\(-x\)</span>。</p>
 </div>
 <div class="section" id="上面那堆都是垃圾">
-<h2>上面那堆都是垃圾<a class="headerlink" href="#上面那堆都是垃圾" title="Permalink to this headline">¶</a></h2>
+<h3>上面那堆都是垃圾<a class="headerlink" href="#上面那堆都是垃圾" title="Permalink to this headline">¶</a></h3>
 <p>因為所有第一象限的複數平方根都開的出來：</p>
 <div class="math notranslate nohighlight">
 \[\sqrt{x+yi} = \sqrt{\frac{\sqrt{x^2+y^2}+x}{2}} + i \sqrt{\frac{\sqrt{x^2+y^2}-x}{2}}\]</div>
@@ -564,7 +622,7 @@ a = \left\lfloor\sqrt{\frac{\sqrt{x^2+y^2}+x}{2}}\right\rfloor, \quad b = \left\
 </div>
 </div>
 <div class="section" id="\cos(1^\circ)-in-Closed-Form">
-<h1><span class="math notranslate nohighlight">\(\cos(1^\circ)\)</span> in Closed Form<a class="headerlink" href="#\cos(1^\circ)-in-Closed-Form" title="Permalink to this headline">¶</a></h1>
+<h2><span class="math notranslate nohighlight">\(\cos(1^\circ)\)</span> in Closed Form<a class="headerlink" href="#\cos(1^\circ)-in-Closed-Form" title="Permalink to this headline">¶</a></h2>
 <p>用三倍角公式和 <span class="math notranslate nohighlight">\(\cos(60^\circ)=1/2\)</span> 加上卡當諾公式可以算出 <span class="math notranslate nohighlight">\(\cos(20^\circ)\)</span> 的 closed form。再利用 <span class="math notranslate nohighlight">\(\sin(18^\circ)=(-1+\sqrt 5)/4\)</span> 跟和角公式可以算出 <span class="math notranslate nohighlight">\(\cos(2^\circ) = \cos(20^\circ - 18^\circ)\)</span>。最後用半角公式，可以算出</p>
 <p>:nbsphinx-math:<a href="#id4"><span class="problematic" id="id5">`</span></a>begin{eqnarray*}
 cos(1^circ) &amp;=&amp; sqrt{frac{1}{2} left(1+frac{1}{4} sqrt{frac{1}{2} left(5+sqrt{5}right)}</p>
@@ -589,12 +647,22 @@ left(5+sqrt{5}right)}+2 sqrt{-8+sqrt{3}+sqrt{15}-sqrt{frac{1}{2} left(5+sqrt{5}r
 </div></blockquote>
 <p>end{eqnarray*}` 這個公式乍看之下沒有複數但實際上是作弊的因為根號裡面有負數。結果就是這個公式的數值還是沒辦法用直式開方法算出來。</p>
 </div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GMM.html" class="btn btn-neutral float-right" title="EM Algorithm for Gaussian Mixture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DS%20and%20Algo.html" class="btn btn-neutral float-left" title="DS and Algo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

@@ -7,8 +7,8 @@ Welcome to MiscBeginnerSC's documentation!
 ==========================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Contents
    
    Backprop
    Bokeh
@@ -17,16 +17,20 @@ Welcome to MiscBeginnerSC's documentation!
    DS and Algo
    Fun Math
    GMM
-   LC 19
-   LC CPP
-   LC DP
-   LC Misc
    Notes
    Piano
    Questions_c
    Questions_m
    Theory
    Untitled
+   
+   :caption: LC
+   
+   LC/19
+   LC/CPP
+   LC/DP
+   LC/Misc
+   
 
 
 Indices and tables

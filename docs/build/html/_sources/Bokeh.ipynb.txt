@@ -4,7 +4,9 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# Bokeh"
+    "# Bokeh\n",
+    "\n",
+    "This does not render in RTD. Possible solutions are [here](https://stackoverflow.com/questions/37096106/how-to-load-external-javascript-in-sphinx-doc) which [this issue](https://github.com/spatialaudio/nbsphinx/issues/61) mentioned."
    ]
   },
   {

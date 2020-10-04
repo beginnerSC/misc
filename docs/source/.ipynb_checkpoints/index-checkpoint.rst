@@ -7,9 +7,30 @@ Welcome to MiscBeginnerSC's documentation!
 ==========================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
+   :maxdepth: 1
+   :caption: Contents
+   
+   Backprop
+   Bokeh
+   C++
+   CPP
+   DS and Algo
+   Fun Math
+   GMM
+   Notes
+   Piano
+   Questions_c
+   Questions_m
+   Theory
+   Untitled
+   
+   :caption: LC
+   
+   LC/19
+   LC/CPP
+   LC/DP
+   LC/Misc
+   
 
 
 Indices and tables
