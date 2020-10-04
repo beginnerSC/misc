@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>BM Quadratic Variation &mdash; MiscBeginnerSC 0.1 documentation</title>
+  <title>Theory &mdash; MiscBeginnerSC 0.1 documentation</title>
   
 
   
@@ -38,7 +38,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Not All LeetCode Questions are Created Equal" href="Untitled.html" />
+    <link rel="prev" title="Questions_m" href="Questions_m.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,14 +85,33 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">BM Quadratic Variation</a></li>
-<li><a class="reference internal" href="#SV-Models">SV Models</a></li>
-<li><a class="reference internal" href="#Empirically…">Empirically…</a></li>
-<li><a class="reference internal" href="#Penalty-Method-for-American-Put-Pricing">Penalty Method for American Put Pricing</a></li>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Backprop.html">Backpropagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bokeh.html">Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CPP.html">CPP – Notes on The Cherno C++ Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DS%20and%20Algo.html">DS and Algo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fun%20Math.html">Fun Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GMM.html">GMM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notes.html">Misc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Piano.html">Piano</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html">Question_c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_m.html">Questions_m</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#BM-Quadratic-Variation">BM Quadratic Variation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SV-Models">SV Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Empirically…">Empirically…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Penalty-Method-for-American-Put-Pricing">Penalty Method for American Put Pricing</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Untitled.html">Not All LeetCode Questions are Created Equal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Untitled.html#Gauss-Quadrature">Gauss Quadrature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/19.html">19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html">CPP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/DP.html">DP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html">Misc</a></li>
+</ul>
+
             
           
         </div>
@@ -135,7 +156,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>BM Quadratic Variation</li>
+      <li>Theory</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -409,8 +430,10 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
+<div class="section" id="Theory">
+<h1>Theory<a class="headerlink" href="#Theory" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="BM-Quadratic-Variation">
-<h1>BM Quadratic Variation<a class="headerlink" href="#BM-Quadratic-Variation" title="Permalink to this headline">¶</a></h1>
+<h2>BM Quadratic Variation<a class="headerlink" href="#BM-Quadratic-Variation" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -436,12 +459,12 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/Theory_1_0.png" src="_images/Theory_1_0.png" />
+<img alt="_images/Theory_2_0.png" src="_images/Theory_2_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="SV-Models">
-<h1>SV Models<a class="headerlink" href="#SV-Models" title="Permalink to this headline">¶</a></h1>
+<h2>SV Models<a class="headerlink" href="#SV-Models" title="Permalink to this headline">¶</a></h2>
 <p>All models below are in the risk-neutral world and there can be a price-volatility correlation, meaning <span class="math notranslate nohighlight">\(dZ_tdW_t = \rho dt\)</span>.</p>
 <p><img alt="image1" src="_images/sv.png" /></p>
 <p>From wikipedia: <a class="reference external" href="https://en.wikipedia.org/wiki/Stochastic_volatility">SV Models</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Constant_elasticity_of_variance_model">CEV</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Local_volatility">LV</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/SABR_volatility_model">SABR</a></p>
@@ -469,7 +492,7 @@ dV_t = \theta(\kappa-V_t)dt + \sigma V_t dW_t
 $$| $$?$$ | $$V_t \text{ accumulates QV at the speed } \sigma^2 V_t^2$$ Derivation of limiting case see [here](https://math.berkeley.edu/~btw/thesis4.pdf)|
 --></div>
 <div class="section" id="Empirically…">
-<h1>Empirically…<a class="headerlink" href="#Empirically…" title="Permalink to this headline">¶</a></h1>
+<h2>Empirically…<a class="headerlink" href="#Empirically…" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The log return of S&amp;P 500 doesn’t accumulate QV at a constant rate <span class="math notranslate nohighlight">\(\sigma^2\)</span> per unit time as it’s assumed in the Black-Scholes model</p></li>
 <li><p>The Heston model assumes that the log return accumulates QV at the rate of the volatility <span class="math notranslate nohighlight">\(V_t\)</span>, and the volatility accumulates QV at the rate of <span class="math notranslate nohighlight">\(\sigma^2 V_t\)</span>. So the speed the log return accumulates QV is a constant times the speed the volatility accumulates QV.</p></li>
@@ -503,12 +526,12 @@ $$| $$?$$ | $$V_t \text{ accumulates QV at the speed } \sigma^2 V_t^2$$ Derivati
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/Theory_4_0.png" src="_images/Theory_4_0.png" />
+<img alt="_images/Theory_5_0.png" src="_images/Theory_5_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="Penalty-Method-for-American-Put-Pricing">
-<h1><a class="reference external" href="https://cs.uwaterloo.ca/~paforsyt/con7.pdf">Penalty Method for American Put Pricing</a><a class="headerlink" href="#Penalty-Method-for-American-Put-Pricing" title="Permalink to this headline">¶</a></h1>
+<h2><a class="reference external" href="https://cs.uwaterloo.ca/~paforsyt/con7.pdf">Penalty Method for American Put Pricing</a><a class="headerlink" href="#Penalty-Method-for-American-Put-Pricing" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[V_{\tau} = \frac{\sigma^2S^2}{2}V_{SS} + rSV_S - rV + \rho\max(V^{*}-V, 0),\]</div>
 <p>where <span class="math notranslate nohighlight">\(V^* = (K-S)^+\)</span> is the payoff function, and <span class="math notranslate nohighlight">\(\rho\)</span> is a large number.</p>
@@ -517,12 +540,22 @@ $$| $$?$$ | $$V_t \text{ accumulates QV at the speed } \sigma^2 V_t^2$$ Derivati
 <li><p>Below the boundary, the penalty term dominates and PDE is approximately <span class="math notranslate nohighlight">\(V_{\tau} = \rho(V^{*}-V)\)</span> whose solution is <span class="math notranslate nohighlight">\(V = V^{*}\)</span></p></li>
 </ul>
 </div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Untitled.html" class="btn btn-neutral float-right" title="Not All LeetCode Questions are Created Equal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Questions_m.html" class="btn btn-neutral float-left" title="Questions_m" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

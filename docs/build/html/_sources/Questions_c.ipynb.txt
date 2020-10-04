@@ -4,6 +4,8 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "# Question_c\n",
+    "\n",
     "## Coding\n",
     "\n",
     "1. Leetcode (121, 122, 123, 188, 309, 714), 47, 64, 15, 53, 560, 344, 969, 1, 104, 239, 200, 986, 51（coderpad）\n",
@@ -176,7 +178,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.8.1"
+   "version": "3.7.8"
   }
  },
  "nbformat": 4,

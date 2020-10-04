@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>EM Algorithm for Gaussian Mixture &mdash; MiscBeginnerSC 0.1 documentation</title>
+  <title>GMM &mdash; MiscBeginnerSC 0.1 documentation</title>
   
 
   
@@ -85,65 +85,33 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents</span></p>
+              <p class="caption"><span class="caption-text">Misc</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Backprop.html">Backpropagation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bokeh.html">Bokeh</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CPP.html">Notes on The Cherno C++ Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CPP.html">CPP – Notes on The Cherno C++ Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DS%20and%20Algo.html">DS and Algo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fun%20Math.html">Fun Math</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">EM Algorithm for Gaussian Mixture</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#When-Z-Can-Be-Observed">When <span class="math notranslate nohighlight">\(Z\)</span> Can Be Observed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#When-Z-Is-a-Latent-Random-Variable">When <span class="math notranslate nohighlight">\(Z\)</span> Is a Latent Random Variable</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GMM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#EM-Algorithm-for-Gaussian-Mixture">EM Algorithm for Gaussian Mixture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#When-Z-Can-Be-Observed">When <span class="math notranslate nohighlight">\(Z\)</span> Can Be Observed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#When-Z-Is-a-Latent-Random-Variable">When <span class="math notranslate nohighlight">\(Z\)</span> Is a Latent Random Variable</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#Mixture-Density-Networks-(MDN)">Mixture Density Networks (MDN)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Notes.html">Misc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#Writing-Python-Module-in-C++">Writing Python Module in C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#駕照到期日延到-12/31">駕照到期日延到 12/31</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#JupyterLab">JupyterLab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#Youtube-Keyboard-Shortcuts">Youtube Keyboard Shortcuts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#Kinesis-Advantage2-Programming-the-Keyboard">Kinesis Advantage2 Programming the Keyboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#GitHub">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#Set-up-JupyterHub-on-Google-Cloud-Step-By-Step">Set up JupyterHub on Google Cloud Step By Step</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Notes.html#JupyterLab-in-the-Cloud">JupyterLab in the Cloud</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Piano.html">Piano Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html">Coding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Programming-Language">Programming Language</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Resume">Resume</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Probability">Probability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Statistics">Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Regression">Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Machine-Learning">Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Linear-Algebra">Linear Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Brain-Teaser">Brain Teaser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_c.html#Option-Pricing">Option Pricing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Questions_m.html">Probability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Theory.html">BM Quadratic Variation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Theory.html#SV-Models">SV Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Theory.html#Empirically…">Empirically…</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Theory.html#Penalty-Method-for-American-Put-Pricing">Penalty Method for American Put Pricing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Piano.html">Piano</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_c.html">Question_c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Questions_m.html">Questions_m</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Theory.html">Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Untitled.html">Not All LeetCode Questions are Created Equal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Untitled.html#Gauss-Quadrature">Gauss Quadrature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LC/19.html">19</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html">728. Self Dividing Numbers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1281.-Subtract-the-Product-and-Sum-of-Digits-of-an-Integer">1281. Subtract the Product and Sum of Digits of an Integer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1512.-Number-of-Good-Pairs">1512. Number of Good Pairs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1470.-Shuffle-the-Array">1470. Shuffle the Array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1480.-Running-Sum-of-1d-Array">1480. Running Sum of 1d Array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#344.-Reverse-String">344. Reverse String</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#557.-Reverse-Words-in-a-String-III">557. Reverse Words in a String III</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#657.-Robot-Return-to-Origin">657. Robot Return to Origin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1309.-Decrypt-String-from-Alphabet-to-Integer-Mapping">1309. Decrypt String from Alphabet to Integer Mapping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1436.-Destination-City">1436. Destination City</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#804.-Unique-Morse-Code-Words">804. Unique Morse Code Words</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#709.-To-Lower-Case">709. To Lower Case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html#1108.-Defanging-an-IP-Address">1108. Defanging an IP Address</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/DP.html">198. House Robber</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/DP.html#72.-Edit-Distance">72. Edit Distance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html">239. Sliding Window Maximum</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html#171.-Excel-Sheet-Column-Number">171. Excel Sheet Column Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html#46.-Permutations">46. Permutations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/CPP.html">CPP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/DP.html">DP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LC/Misc.html">Misc</a></li>
 </ul>
 
             
@@ -190,7 +158,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>EM Algorithm for Gaussian Mixture</li>
+      <li>GMM</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -233,15 +201,17 @@
     text-align: unset;
 }
 </style>
+<div class="section" id="GMM">
+<h1>GMM<a class="headerlink" href="#GMM" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="EM-Algorithm-for-Gaussian-Mixture">
-<h1>EM Algorithm for Gaussian Mixture<a class="headerlink" href="#EM-Algorithm-for-Gaussian-Mixture" title="Permalink to this headline">¶</a></h1>
+<h2>EM Algorithm for Gaussian Mixture<a class="headerlink" href="#EM-Algorithm-for-Gaussian-Mixture" title="Permalink to this headline">¶</a></h2>
 <p>The goal is to estimate a three-component Gaussian mixture model:</p>
 <p><span class="math">\begin{eqnarray*}
 P(Z = j) &=& \phi_j, \quad j=1, 2, 3\\
 (X|Z=j) &\sim& N(\mu_j, \sigma_j).
 \end{eqnarray*}</span></p>
 <div class="section" id="When-Z-Can-Be-Observed">
-<h2>When <span class="math notranslate nohighlight">\(Z\)</span> Can Be Observed<a class="headerlink" href="#When-Z-Can-Be-Observed" title="Permalink to this headline">¶</a></h2>
+<h3>When <span class="math notranslate nohighlight">\(Z\)</span> Can Be Observed<a class="headerlink" href="#When-Z-Can-Be-Observed" title="Permalink to this headline">¶</a></h3>
 <p>Denote by <span class="math notranslate nohighlight">\(p(x; \mu, \sigma)\)</span> the probability density function of a normal distribution</p>
 <div class="math notranslate nohighlight">
 \[p(x; \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}.\]</div>
@@ -277,7 +247,7 @@ P(Z = j) &=& \phi_j, \quad j=1, 2, 3\\
 <p>The AM–GM inequality would work too to optimize <span class="math notranslate nohighlight">\(\phi_1^{m_1}\phi_2^{m_2}\phi_3^{m_3}\)</span>.</p>
 </div>
 <div class="section" id="When-Z-Is-a-Latent-Random-Variable">
-<h2>When <span class="math notranslate nohighlight">\(Z\)</span> Is a Latent Random Variable<a class="headerlink" href="#When-Z-Is-a-Latent-Random-Variable" title="Permalink to this headline">¶</a></h2>
+<h3>When <span class="math notranslate nohighlight">\(Z\)</span> Is a Latent Random Variable<a class="headerlink" href="#When-Z-Is-a-Latent-Random-Variable" title="Permalink to this headline">¶</a></h3>
 <p>When the value of <span class="math notranslate nohighlight">\(Z\)</span> can not be observed, the EM algorithm is used for estimation where all expressions involving observation <span class="math notranslate nohighlight">\(z_i\)</span> in the above estimators, say <span class="math notranslate nohighlight">\(g(z_i)\)</span>, are replaced by a conditional expectation <span class="math notranslate nohighlight">\(E[g(z_i)|X=x_i]\)</span>. Given the current estimates of all model parameters and the observation <span class="math notranslate nohighlight">\(x_i\)</span>, the process of finding <span class="math notranslate nohighlight">\(E[g(z_i)|X=x_i]\)</span> is called the E-step. To maximize the log-likelihood function given <span class="math notranslate nohighlight">\(E[g(z_i)|X=x_i]\)</span> (as an estimate of
 <span class="math notranslate nohighlight">\(g(z_i)\)</span>) is called the M-step. The EM algorithm alternates between E-steps and M-steps until convergence.</p>
 <p>To derive the M-step, first rewrite the estimators derived above using indicator functions to make expressions involving <span class="math notranslate nohighlight">\(z_i\)</span> more explicit:</p>
@@ -302,6 +272,7 @@ w_i^{(j)} &=& P(z_i = j|X=x_i) \\
 &=& \frac{p(x_i; \mu_j, \sigma_j)\phi_j}{p(x_i; \mu_1, \sigma_1)\phi_1 + p(x_i; \mu_2, \sigma_2)\phi_2 + p(x_i; \mu_3, \sigma_3)\phi_3}
 \end{eqnarray*}</span></p>
 <p>This is the formula to update the estimate for <span class="math notranslate nohighlight">\(w_i^{(j)}\)</span> in the E-step.</p>
+</div>
 </div>
 <div class="section" id="Mixture-Density-Networks-(MDN)">
 <h2>Mixture Density Networks (MDN)<a class="headerlink" href="#Mixture-Density-Networks-(MDN)" title="Permalink to this headline">¶</a></h2>

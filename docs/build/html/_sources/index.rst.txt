@@ -8,7 +8,7 @@ Welcome to MiscBeginnerSC's documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents
+   :caption: Misc
    
    Backprop
    Bokeh
@@ -31,7 +31,6 @@ Welcome to MiscBeginnerSC's documentation!
    LC/DP
    LC/Misc
    
-
 
 Indices and tables
 ==================
