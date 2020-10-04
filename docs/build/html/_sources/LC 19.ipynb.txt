@@ -1,0 +1,1080 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 239. Sliding Window Maximum\n",
+    "\n",
+    "Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.\n",
+    "\n",
+    "Follow up: Could you solve it in linear time?\n",
+    "\n",
+    "用一個 max heap 存 window 裡的數。當 windown 移動時為了能在 $O(\\log k)$ 時間內砍掉 window 最前面的數，保存一個 index table 用來記下每個數字在 heap 裡的 index 為多少，並且每次動到 heap（push 或 remove）時都要去 update 這個 index table。\n",
+    "\n",
+    "<font color='red'>下面答案是錯的！</font>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[3, 3, 5, 3, 6, 7]"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "nums = [1,3,-1,-3,5,3,6,7]\n",
+    "k = 3\n",
+    "\n",
+    "def maxSlidingWindow(nums, k):    \n",
+    "    heap = []\n",
+    "    for n in nums[:k][::-1]:\n",
+    "        idx = push(heap, n) \n",
+    "        \n",
+    "    res = [heap[0]]\n",
+    "    for i in range(len(nums)-k):\n",
+    "        remove(heap, idx)\n",
+    "        idx = push(heap, nums[i+k])  # 這個 index 只有加進去的時候是對的。後來多 push 幾個數進 heap 就亂掉了。需要一個能一邊 push 一邊 update index table 的機制\n",
+    "        res.append(heap[0])\n",
+    "        \n",
+    "    return res\n",
+    "\n",
+    "maxSlidingWindow(nums, k)\n",
+    "\n",
+    "# the right answer is [3,3,5,5,6,7] "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def push(heap, num):\n",
+    "    '''\n",
+    "    Push one number to a max heap and return the final location (index) of that number. \n",
+    "    Since list is mutable the heap will be updated after each function call. \n",
+    "    '''\n",
+    "    idx = len(heap)  # index of num\n",
+    "    heap.append(num)\n",
+    "    isEven = lambda x: x%2==0\n",
+    "    parentIdx = max(idx//2 -1 if isEven(idx) else (idx+1)//2 -1, 0)\n",
+    "    \n",
+    "    # heapify up\n",
+    "    while heap[parentIdx] < heap[idx]:\n",
+    "        heap[parentIdx], heap[idx] = heap[idx], heap[parentIdx]\n",
+    "        idx = parentIdx\n",
+    "        parentIdx = max(idx//2 -1 if isEven(idx) else (idx+1)//2 -1, 0)\n",
+    "        \n",
+    "    return idx\n",
+    "\n",
+    "def remove(heap, idx):\n",
+    "    '''\n",
+    "    Remove an element from a max heap by index\n",
+    "    Can not input -1 as index or otherwise children index computation will go wrong. \n",
+    "    '''\n",
+    "    heap[idx], heap[-1] = heap[-1], heap[idx]\n",
+    "    del heap[-1]\n",
+    "    childIdxL = 2*(idx+1)-1\n",
+    "    childIdxR = 2*(idx+1)\n",
+    "    \n",
+    "    # heapify down\n",
+    "    while (childIdxL < len(heap) and childIdxR < len(heap)) and (heap[idx] < heap[childIdxL] or heap[idx] < heap[childIdxR]): \n",
+    "        # still has two children\n",
+    "        if heap[childIdxL] < heap[childIdxR]:\n",
+    "            heap[idx], heap[childIdxR] = heap[childIdxR], heap[idx]\n",
+    "            idx = childIdxR\n",
+    "        else:\n",
+    "            heap[idx], heap[childIdxL] = heap[childIdxL], heap[idx]\n",
+    "            idx = childIdxL\n",
+    "        \n",
+    "        childIdxL = 2*(idx+1)-1\n",
+    "        childIdxR = 2*(idx+1)\n",
+    "\n",
+    "    if (childIdxL < len(heap)) and (heap[idx] < heap[childIdxL]):   # only has left child\n",
+    "        heap[idx], heap[childIdxL] = heap[childIdxL], heap[idx]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## <font color=red>188. Best Time to Buy and Sell Stock IV</font>\n",
+    "\n",
+    "Say you have an array for which the i-th element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete at most k transactions. Note: You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).\n",
+    "\n",
+    "最多可以交易 k 次，[這裡](https://www.youtube.com/watch?v=oDhu5uGq_ic)看來的解答。\n",
+    "\n",
+    "下面的答案是對的但在 LeetCode submit 不會過。如果遇到很長的 list 或 k >> n 時間或空間會爆。\n",
+    "\n",
+    "|  | 2| 5| 7| 1| 4| 3| 1| 3|\n",
+    "|--|--|--|--|--|--|--|--|--|\n",
+    "| 0| 0| 0| 0| 0| 0| 0| 0| 0|\n",
+    "| 1| 0| 3| 5| 5| 5| 5| 5| 5|\n",
+    "| 2| 0| 3| 5| 5| 8| 8| 8| 8|\n",
+    "| 3| 0| 3| 5| 5| 8| 8| 8|10|\n",
+    "\n",
+    "\n",
+    "$$\n",
+    "T_{i, j} = \\max\n",
+    "\\begin{cases}\n",
+    "T_{i, j-1} \\\\\n",
+    "(p_j - p_m) + T_{i-1, m}\\quad m=0, 1, \\ldots, j-1\n",
+    "\\end{cases}, \n",
+    "$$\n",
+    "\n",
+    "可再優化成\n",
+    "\n",
+    "\\begin{eqnarray*}\n",
+    "T_{i, j} &=& \\max\n",
+    "\\begin{cases}\n",
+    "T_{i, j-1} \\\\\n",
+    "p_j + \\text{maxDiff}_j\n",
+    "\\end{cases}\\\\\\\\\n",
+    "\\text{maxDiff}_{j} &=& \\max(\\text{maxDiff}_{j-1},~T_{i-1, j} - p_j), \n",
+    "\\end{eqnarray*}\n",
+    "\n",
+    "每一列初始 $\\text{maxDiff}_0 = 0 - p_0$。\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10"
+      ]
+     },
+     "execution_count": 38,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prices = [2, 5, 7, 1, 4, 3, 1, 3]\n",
+    "k = 3\n",
+    "\n",
+    "def maxProfit(k, prices):\n",
+    "    n = len(prices)\n",
+    "    t = [[0]*n for m in range(k+1)]\n",
+    "    \n",
+    "    for i in range(1, k+1):\n",
+    "        maxDiff = -prices[0]\n",
+    "        for j in range(1, n):\n",
+    "            t[i][j] = max(t[i][j-1], prices[j] + maxDiff)\n",
+    "            maxDiff = max(maxDiff, t[i-1][j] - prices[j])\n",
+    "\n",
+    "    return t[-1][-1]\n",
+    "\n",
+    "maxProfit(k, prices)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 123. Best Time to Buy and Sell Stock III\n",
+    "\n",
+    "Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete at most two transactions. Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).\n",
+    "\n",
+    "最多可以交易兩次。\n",
+    "\n",
+    "Best Time to Buy and Sell Stock (121) 的解答有一個性質就是把 input 整個取負號再倒過來會得到一樣的結果，例如 maxProfit([5, 3, 6, 4]) 會等於 maxProfit([-4, -6, -3, -5])。\n",
+    "\n",
+    "可以交易兩次相當於把長度 n 的 array 拆成兩半分別求 121 的 maxProfit 再加起來。有 n 種拆法，例如 [7, 1, 5, 3, 6, 4] = [7, 1] + [5, 3, 6, 4] 是其中一種。隨著分拆點推進，第一個數列變長，第二個數列變短。第一個數列直接丟 121 的解答（但要記下 running max profit，不能用 O(1) space 的作法），第二個數列先倒過來取負號再丟，這樣新增的才是後面的數而不是前面的。\n",
+    "\n",
+    "下面 pass1 是在求 [7, 1, 5, 3, 6, 4] 的 121 解答，pass2 是求 [-4, -6, -3, -5, -1, -7] 的 121 解答。最後把其中一個 running max profit 倒過來和另一個相加，得到的數列就是用不同分拆點時得到的兩次交易 max profit。取 max 就是這題的答案。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prices = [7, 1, 5, 3, 6, 4]\n",
+    "\n",
+    "def maxProfit(prices):\n",
+    "    n = len(prices)\n",
+    "    \n",
+    "    # pass 1\n",
+    "    runningMax1 = [0]*n\n",
+    "    currentMin = [0]*n\n",
+    "    if n > 0:\n",
+    "        currentMin[0] = prices[0]\n",
+    "        for i, p in zip(range(1, n), prices[1:]):\n",
+    "            runningMax1[i] = max(p-currentMin[i-1], runningMax1[i-1])\n",
+    "            currentMin[i] = min(currentMin[i-1], p)\n",
+    "\n",
+    "    # pass 2\n",
+    "    prices = [-p for p in prices[::-1]]\n",
+    "    runningMax2 = [0]*n\n",
+    "    currentMin = [0]*n\n",
+    "    if n > 0:\n",
+    "        currentMin[0] = prices[0]\n",
+    "        for i, p in zip(range(1, n), prices[1:]):\n",
+    "            runningMax2[i] = max(p-currentMin[i-1], runningMax2[i-1])\n",
+    "            currentMin[i] = min(currentMin[i-1], p)\n",
+    "\n",
+    "    runningMax1 = [0] + runningMax1\n",
+    "    runningMax2 = runningMax2[::-1] + [0]\n",
+    "        \n",
+    "    return max(m1+m2 for m1, m2 in zip(runningMax1, runningMax2))\n",
+    "\n",
+    "maxProfit(prices)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## <font color='red'>309. Best Time to Buy and Sell Stock with Cooldown</font>\n",
+    "\n",
+    "\n",
+    "Say you have an array for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times) with the following restrictions:\n",
+    "\n",
+    "* You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).\n",
+    "* After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)\n",
+    " \n",
+    "賣完之後不能隔天馬上買而是要等一天。\n",
+    "\n",
+    "\n",
+    "[兩個狀態的 DP](https://youtu.be/Ggzbo9eVrLU?t=92)\n",
+    "：h 和 u 分別為持有股票和空倉時，現金帳戶價值的最大值。把 prices 跑完時 u 的結尾即是答案。Transition function 的 max 裡第一項是第 n 天有改變狀態的情況，第二項是沒有改變狀態。\n",
+    "\n",
+    "\n",
+    "Base case hold 狀態因為買入股票，現金帳戶變成負值。第二天的 hold 是前兩天股票選便宜的那天買：\n",
+    "\n",
+    "\n",
+    "|p |8 |6 |4 |3 |3 |2 |3 |5 |8 |3 |8 |2 |6 |\n",
+    "|--|--|--|--|--|--|--|--|--|--|--|--|--|--|\n",
+    "|h|-8|-6|\n",
+    "|u|0|\n",
+    "\n",
+    "\n",
+    "Transition: \n",
+    "\n",
+    "\n",
+    "$$\n",
+    "\\begin{pmatrix}\n",
+    "h_n\\\\\n",
+    "u_n\n",
+    "\\end{pmatrix}\n",
+    "=\n",
+    "\\begin{pmatrix}\n",
+    "\\max(u_{n-2}-p_n, h_{n-1})\\\\\n",
+    "\\max(h_{n-1}+p_n, u_{n-1})\n",
+    "\\end{pmatrix}\n",
+    "$$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prices = [8, 6, 4, 3, 3, 2, 3, 5, 8, 3, 8, 2, 6]\n",
+    "\n",
+    "def maxProfit(prices):\n",
+    "    n = len(prices)\n",
+    "    if n < 2:\n",
+    "        return 0\n",
+    "    else:\n",
+    "        h = [0]*n\n",
+    "        u = [0]*n\n",
+    "        \n",
+    "        h[:2] = [-prices[0], max(-prices[0], -prices[1])]\n",
+    "        u[1] = max(h[0] + prices[1], u[0])\n",
+    "        \n",
+    "        for i, p in zip(range(2, n), prices[2:]):\n",
+    "            h[i], u[i] = max(u[i-2] - p, h[i-1]), max(h[i-1] + p, u[i-1])\n",
+    "        \n",
+    "        return u[n-1]\n",
+    "\n",
+    "maxProfit(prices)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 714. Best Time to Buy and Sell Stock with Transaction Fee\n",
+    "\n",
+    "Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee. You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie. you must sell the stock share before you buy again.) Return the maximum profit you can make.\n",
+    "\n",
+    "用兩個狀態的 DP，同 309，但只需要一天的 Base case。Transition function 改成\n",
+    "\n",
+    "$$\n",
+    "\\begin{pmatrix}\n",
+    "h_n\\\\\n",
+    "u_n\n",
+    "\\end{pmatrix}\n",
+    "=\n",
+    "\\begin{pmatrix}\n",
+    "\\max(u_{n-1}-p_n, h_{n-1})\\\\\n",
+    "\\max(h_{n-1}+p_n- f, u_{n-1})\n",
+    "\\end{pmatrix}\n",
+    "$$\n",
+    "\n",
+    "交易成本一定要加在賣掉那邊（從 hold 轉成 unhold）因為這兩個變數記的是現金帳戶價值。\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prices = [8, 6, 4, 3, 3, 2, 3, 5, 8, 3, 8, 2, 6]\n",
+    "fee = 3\n",
+    "\n",
+    "def maxProfit(prices, fee):\n",
+    "    n = len(prices)\n",
+    "    if n < 2:\n",
+    "        return 0\n",
+    "    else:\n",
+    "        h = [0]*n\n",
+    "        u = [0]*n\n",
+    "        h[0] = -prices[0]\n",
+    "\n",
+    "        for i, p in zip(range(1, n), prices[1:]):\n",
+    "            h[i], u[i] = max(u[i-1] - p, h[i-1]), max(h[i-1] + p - fee, u[i-1])\n",
+    "\n",
+    "        return u[n-1]\n",
+    "\n",
+    "maxProfit(prices, fee)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 986. Interval List Intersections\n",
+    "\n",
+    "Given two lists of closed intervals, each list of intervals is pairwise disjoint and in sorted order. Return the intersection of these two interval lists.\n",
+    "\n",
+    "[用 two pointers 分別追蹤 A 和 B 的區間。](https://youtu.be/5xL_N2S3-QU?t=224)兩閉區間有重疊 iff $s \\leq e$。如果題目改開區間則是 $s < e$。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[[1, 2], [5, 5], [8, 10], [15, 23], [24, 24], [25, 25]]"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "A = [[0, 2], [5, 10], [13, 23], [24, 25]]\n",
+    "B = [[1, 5], [8, 12], [15, 24], [25, 26]]\n",
+    "\n",
+    "def intervalIntersection(A, B):\n",
+    "    i = j = 0\n",
+    "    res = []\n",
+    "    while i<len(A) and j<len(B):\n",
+    "        s = max(A[i][0], B[j][0])\n",
+    "        e = min(A[i][1], B[j][1])\n",
+    "        if s <= e:\n",
+    "            res.append([s, e])\n",
+    "            \n",
+    "        if A[i][1] < B[j][1]:\n",
+    "            i += 1\n",
+    "        else:\n",
+    "            j += 1\n",
+    "        \n",
+    "    return res\n",
+    "            \n",
+    "intervalIntersection(A, B) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 969. Pancake Sorting\n",
+    "\n",
+    "Given an array A, we can perform a pancake flip: We choose some positive integer k <= A.length, then reverse the order of the first k elements of A.  We want to perform zero or more pancake flips (doing them one after another in succession) to sort the array A. Return the k-values corresponding to a sequence of pancake flips that sort A.  Any valid answer that sorts the array within 10 * A.length flips will be judged as correct.\n",
+    "\n",
+    "[最簡單的算法是 selection sort 變形：](https://zh.wikipedia.org/zh-tw/%E7%85%8E%E9%A4%85%E6%8E%92%E5%BA%8F)每次找出還沒排序的數之中最大的，先把它翻到最前面，再翻到還沒排序的部份的最後面。所以答案的偶數 subarray 會是 n, n-1, ...。看了 LeetCode 最快解法和一些 youtube，大家都只寫這種。\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[3, 4, 2, 3, 2]"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# 假設排序過的 list 是 [1, 2, 3, ..., n]\n",
+    "# 這份 code 成功跑過了 LeetCode 所有的 test case\n",
+    "\n",
+    "A = [3,2,4,1]\n",
+    "\n",
+    "def pancakeSort(A):\n",
+    "    def pflip(k): \n",
+    "        A[:k] = A[:k][::-1]\n",
+    "    \n",
+    "    n = len(A)\n",
+    "    res = []\n",
+    "    for k in range(n, 1, -1):\n",
+    "        kIdx = A.index(k)\n",
+    "        if kIdx != 0:\n",
+    "            res.append(kIdx+1)\n",
+    "            pflip(kIdx+1)\n",
+    "            \n",
+    "        res.append(k)\n",
+    "        pflip(k)\n",
+    "        \n",
+    "    return res\n",
+    "        \n",
+    "pancakeSort(A)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 200. Number of Islands\n",
+    "\n",
+    "Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.\n",
+    "\n",
+    "每次踩到 1 就 DFS 把同一個島都著色成 0，並且 count 累加一次。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "grid = [\n",
+    "    ['1', '1', '0', '0', '0'], \n",
+    "    ['1', '1', '0', '0', '0'], \n",
+    "    ['0', '0', '1', '0', '0'],\n",
+    "    ['0', '0', '0', '1', '1']\n",
+    "]\n",
+    "\n",
+    "def numIslands(grid):\n",
+    "    if not grid: return 0\n",
+    "    else:\n",
+    "        m = len(grid)\n",
+    "        n = len(grid[0])\n",
+    "\n",
+    "        def paint(i, j):\n",
+    "            grid[i][j] = '0'\n",
+    "            if i!=0   and grid[i-1][j]=='1':  paint(i-1, j)\n",
+    "            if i!=m-1 and grid[i+1][j]=='1':  paint(i+1, j)\n",
+    "            if j!=0   and grid[i][j-1]=='1':  paint(i, j-1)\n",
+    "            if j!=n-1 and grid[i][j+1]=='1':  paint(i, j+1)\n",
+    "\n",
+    "        count = 0\n",
+    "        for i in range(m):\n",
+    "            for j in range(n):\n",
+    "                if grid[i][j] == '1':\n",
+    "                    paint(i, j)\n",
+    "                    count +=1\n",
+    "\n",
+    "        return count\n",
+    "\n",
+    "numIslands(grid)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 560. Subarray Sum Equals K\n",
+    "\n",
+    "Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.\n",
+    "\n",
+    "用一個 hash table 存下到目前為止，這個 cumsum 一共出現過幾次。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# nums = [-1, -1, 1]\n",
+    "# k = 0\n",
+    "\n",
+    "nums = [1, 1, 1]\n",
+    "k = 2\n",
+    "\n",
+    "def subarraySum(nums, k):\n",
+    "    cumsumCount = {0: 1}   # running cumsum counts\n",
+    "    curSum = 0\n",
+    "    res = 0\n",
+    "    for i, n in enumerate(nums):\n",
+    "        curSum += n\n",
+    "        res += cumsumCount.get(curSum-k, 0)  # 一定要放在 update 字典之前不然遇到 k=0 的情況會把自己算進去\n",
+    "        \n",
+    "        if curSum in cumsumCount:\n",
+    "            cumsumCount[curSum] += 1\n",
+    "        else:\n",
+    "            cumsumCount[curSum] = 1    \n",
+    "    return res\n",
+    "        \n",
+    "subarraySum(nums, k)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 64. Minimum Path Sum\n",
+    "\n",
+    "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path. Note: You can only move either down or right at any point in time."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "grid = [\n",
+    "  [1,3,1],\n",
+    "  [1,5,1],\n",
+    "  [4,2,1]\n",
+    "]\n",
+    "\n",
+    "def minPathSum(grid):\n",
+    "    m = len(grid)\n",
+    "    n = len(grid[0])\n",
+    "\n",
+    "    for i in range(1, m):\n",
+    "        grid[i][0] += grid[i-1][0]\n",
+    "\n",
+    "    for j in range(1, n):\n",
+    "        grid[0][j] += grid[0][j-1]\n",
+    "\n",
+    "    for i in range(1, m):\n",
+    "        for j in range(1, n):\n",
+    "            grid[i][j] += min(grid[i-1][j], grid[i][j-1])\n",
+    "\n",
+    "    return grid[m-1][n-1]\n",
+    "\n",
+    "minPathSum(grid)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 47. Permutations II\n",
+    "\n",
+    "Given a collection of numbers that might contain duplicates, return all possible unique permutations.\n",
+    "\n",
+    "如果 input list 裡沒有重覆的數字，答案就是把每一個數字抓出來當開頭，剩下的拿去做 permutation（遞迴）。現在 input list 雖有重覆的數字，但重覆的數字只抓出來當開頭一次就會得到正確答案。例如 [1, 1, 1, 2, 2, 3, 3, 3, 3] 之中 1, 2, 3 各當開頭一次。第一個迴圈只是為了抓每個數字第一次出現時的 index。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[[3, 3, 5], [3, 5, 3], [5, 3, 3]]"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "nums = [3, 3, 5]\n",
+    "\n",
+    "def permuteUnique(nums):\n",
+    "    if not nums:\n",
+    "        return [nums]\n",
+    "    else:\n",
+    "        idx = {}\n",
+    "        for i, n in enumerate(nums):\n",
+    "            if n not in idx:\n",
+    "                idx[n] = i\n",
+    "                \n",
+    "        res = []\n",
+    "        for n, i in idx.items():\n",
+    "            for l in permuteUnique(nums[:i] + nums[i+1:]):\n",
+    "                res.append([n]+l)\n",
+    "                \n",
+    "        return res\n",
+    "    \n",
+    "permuteUnique(nums)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 15. 3Sum\n",
+    "\n",
+    "Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero. The solution set must not contain duplicate triplets.\n",
+    "\n",
+    "可以用 two sum (see the 2nd cell below) 但既然都要 $O(n^2)$ 不如[先排序然後用三個指標從左右往中間靠近。](https://www.youtube.com/watch?v=aSVI-DekuTk)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[[-1, -1, 2], [-1, 0, 1]]"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "nums = [-1, 0, 1, 2, -1, -4]\n",
+    "\n",
+    "def threeSum(nums):\n",
+    "    nums = sorted(nums)\n",
+    "    i = 0\n",
+    "    j = 1\n",
+    "    k = len(nums)-1\n",
+    "    \n",
+    "    res = []\n",
+    "    for i in range(len(nums)-2):\n",
+    "        if i > 0 and nums[i] == nums[i-1]:    # skip duplicate numbers\n",
+    "            continue\n",
+    "            \n",
+    "        j = i+1\n",
+    "        k = len(nums)-1\n",
+    "        while j<k:\n",
+    "            s = nums[i] + nums[j] + nums[k]\n",
+    "            if s > 0:    k -= 1\n",
+    "            elif s < 0:  j += 1\n",
+    "            elif s == 0: \n",
+    "                res.append([nums[i], nums[j], nums[k]])\n",
+    "                while j < k and nums[j] == nums[j+1]:     # skip duplicate numbers\n",
+    "                    j += 1\n",
+    "                while j < k and nums[k] == nums[k-1]:     # skip duplicate numbers\n",
+    "                    k -= 1\n",
+    "                j += 1\n",
+    "                k -= 1  \n",
+    "    return res\n",
+    "\n",
+    "threeSum(nums)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[[-1, 0, 1], [-1, -1, 2]]"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# solution making use of two sum\n",
+    "\n",
+    "nums = [-1, 0, 1, 2, -1, -4]\n",
+    "\n",
+    "def twoSum(nums, target):\n",
+    "    '''\n",
+    "    This is a stronger version of twoSum that can handle multiple solutions as well as no solution\n",
+    "    '''\n",
+    "    allSln = set([])\n",
+    "    s = set([])\n",
+    "    for n in nums:\n",
+    "        if n in s:\n",
+    "            allSln.add((n, target-n))\n",
+    "        s.add(target - n)\n",
+    "\n",
+    "    return allSln\n",
+    "\n",
+    "def threeSum(nums):\n",
+    "    res = set([])\n",
+    "    for i, n in enumerate(nums):\n",
+    "        for a, b in twoSum(nums[i+1:], -n):\n",
+    "            res.add(tuple(sorted([n, a, b])))\n",
+    "\n",
+    "    return [list(sln) for sln in res]\n",
+    "\n",
+    "# twoSum([1, 7, 5, 5, 4, 4, 4, 4, 5, 3, 3], 8)\n",
+    "# twoSum([1, 2], 8)\n",
+    "\n",
+    "threeSum(nums)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 104. Maximum Depth of Binary Tree\n",
+    "\n",
+    "Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. Note: A leaf is a node with no children.\n",
+    "\n",
+    "Example: Given binary tree [3,9,20,null,null,15,7],\n",
+    "\n",
+    "```\n",
+    "    3\n",
+    "   / \\\n",
+    "  9  20\n",
+    "    /  \\\n",
+    "   15   7\n",
+    "```\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Definition for a binary tree node.\n",
+    "# class TreeNode:\n",
+    "#     def __init__(self, val=0, left=None, right=None):\n",
+    "#         self.val = val\n",
+    "#         self.left = left\n",
+    "#         self.right = right\n",
+    "\n",
+    "def maxDepth(root):\n",
+    "    if root:\n",
+    "        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))\n",
+    "    else:\n",
+    "        return 0\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 344. Reverse String\n",
+    "\n",
+    "Write a function that reverses a string. The input string is given as an array of characters char[]. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory. You may assume all the characters consist of printable ascii characters."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['o', 'l', 'l', 'e', 'h']"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s = [\"h\",\"e\",\"l\",\"l\",\"o\"]\n",
+    "\n",
+    "def reverseString(s):\n",
+    "    n = len(s)\n",
+    "    for i in range(n//2):\n",
+    "        s[i], s[n-i-1] = s[n-i-1], s[i]\n",
+    "    return s\n",
+    "\n",
+    "reverseString(s)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 122. Best Time to Buy and Sell Stock II\n",
+    "\n",
+    "Say you have an array prices for which the ith element is the price of a given stock on day i. Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prices = [7, 1, 5, 3, 6, 4]\n",
+    "\n",
+    "def maxProfit(prices):\n",
+    "    profit = 0 \n",
+    "    for i in range(1, len(prices)):\n",
+    "        if prices[i] > prices[i-1]:\n",
+    "            profit += (prices[i] - prices[i-1])\n",
+    "    return profit\n",
+    "\n",
+    "maxProfit(prices)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 121. Best Time to Buy and Sell Stock\n",
+    "\n",
+    "Say you have an array for which the ith element is the price of a given stock on day i. If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit. Note that you cannot sell a stock before you buy one.\n",
+    "\n",
+    "直接找出最大和最小再相減行不通，因為可能出現先賣再買。但一邊求 running max profit 一邊 update current min 就不會有這個問題了。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "5"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prices = [7, 1, 5, 3, 6, 4]\n",
+    "\n",
+    "def maxProfit(prices):\n",
+    "    res = 0\n",
+    "    if prices:\n",
+    "        currentMin = prices[0]\n",
+    "        for p in prices[1:]:\n",
+    "            res = max(p-currentMin, res)\n",
+    "            currentMin = min(currentMin, p)\n",
+    "            \n",
+    "    return res\n",
+    "\n",
+    "def maxProfit_(prices):\n",
+    "    '''\n",
+    "    Can use solution of 53 because profit is sum of daily profits from consecutive days\n",
+    "    '''\n",
+    "    return max(0, maxSubArray(np.diff(prices))) if len(prices)>1 else 0\n",
+    "\n",
+    "maxProfit(prices)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 53. Maximum Subarray\n",
+    "\n",
+    "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\n",
+    "\n",
+    "def maxSubArray(nums):\n",
+    "    maxSum = curMax = nums[0]\n",
+    "    for i  in range(1, len(nums)):\n",
+    "        curMax = max(nums[i], curMax + nums[i])\n",
+    "        maxSum = max(curMax, maxSum)\n",
+    "        \n",
+    "    return maxSum\n",
+    "    \n",
+    "maxSubArray(nums)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Two Sum\n",
+    "\n",
+    "Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[0, 1]"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "nums = [2, 7, 11, 5]\n",
+    "target = 9\n",
+    "\n",
+    "def twoSum(nums, target):\n",
+    "    d = {}\n",
+    "    for i, n in enumerate(nums):\n",
+    "        if n in d:\n",
+    "            return [d[n], i]\n",
+    "        else:\n",
+    "            d[target - n] = i\n",
+    "        \n",
+    "twoSum(nums, target)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

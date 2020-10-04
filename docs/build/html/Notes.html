@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Misc &mdash; MiscBeginnerSC 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> MiscBeginnerSC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Misc</a></li>
+<li><a class="reference internal" href="#Writing-Python-Module-in-C++">Writing Python Module in C++</a></li>
+<li><a class="reference internal" href="#駕照到期日延到-12/31">駕照到期日延到 12/31</a></li>
+<li><a class="reference internal" href="#JupyterLab">JupyterLab</a></li>
+<li><a class="reference internal" href="#Youtube-Keyboard-Shortcuts">Youtube Keyboard Shortcuts</a></li>
+<li><a class="reference internal" href="#Kinesis-Advantage2-Programming-the-Keyboard">Kinesis Advantage2 Programming the Keyboard</a></li>
+<li><a class="reference internal" href="#GitHub">GitHub</a></li>
+<li><a class="reference internal" href="#Set-up-JupyterHub-on-Google-Cloud-Step-By-Step">Set up JupyterHub on Google Cloud Step By Step</a></li>
+<li><a class="reference internal" href="#JupyterLab-in-the-Cloud">JupyterLab in the Cloud</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MiscBeginnerSC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Misc</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Notes.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Misc">
+<h1>Misc<a class="headerlink" href="#Misc" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>CMU</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.google.com/document/d/1mmsT33DBr4-wJiS2cuvIFPl1QntGFPLoEi2lnhm6qAI/edit">Probability Final FAQ</a></p></li>
+<li><p><a class="reference external" href="https://canvas.cmu.edu/">Canvas CMU</a></p></li>
+<li><p><a class="reference external" href="https://canvas.cmu.edu/courses/3194/discussion_topics/228985">Course Video</a></p></li>
+<li><p><a class="reference external" href="s3.as.cmu.edu/sio/index.html">Tuition</a></p></li>
+<li><p><a class="reference external" href="https://canvas.cmu.edu/courses/3194/pages/in-person-seat-request">On-campus Seat Reservation</a></p></li>
+</ul>
+</li>
+<li><p>Kaggle</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=I3FBJdiExcg">Kaggle Titanic Walk-Through 40 min</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/VWg-I3aP4nk?t=1285">Kaggle Titanic Walk-Through 中文一小時</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=IaCgX3BQbD0">Kaggle 入門中文</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/rtatman/dashboarding-with-notebooks-day-4">Schedule Notebooks using PythonAnywhere or Google Cloud</a></p></li>
+</ul>
+</li>
+<li><p>Cron</p>
+<ul>
+<li><p><a class="reference external" href="https://www.cronjobservices.com/">List of online cron services</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=XGF3Qu4dUqk">Stepping Through CPython</a></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=X6nxPd50Nws">美元霸權歷史</a></p></li>
+<li><p><a class="reference external" href="https://www.businesstoday.com.tw/article/category/80731/post/202007150038/%E6%9B%BE%E8%A2%AB%E5%AE%A3%E5%91%8A%E5%8F%AA%E8%83%BD%E5%86%8D%E6%B4%BB%E5%8D%8A%E5%B9%B4...%E5%8F%B0%E5%A4%A7%E9%86%AB%E5%B8%AB%E7%BD%B9%E7%99%8C%E5%BE%8C%E5%AD%98%E6%B4%BB45%E5%B9%B4%EF%BC%8C%E5%A5%89%E8%A1%8C%E3%80%8C%E7%94%9F%E7%90%86%E6%99%82%E9%90%98%E9%A4%8A%E7%94%9F%E6%B3%95%E3%80%8D%EF%BC%8C%E5%BE%9E%E6%AD%A4%E4%B8%8D%E7%94%9F%E7%97%85?utm_source=FB&amp;utm_medium=article&amp;utm_campaign=200715">生理時鐘養生法</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ahcBeXyHGFY">FIRE 運動的創始人回去上班了</a></p>
+<ul>
+<li><p>一家四口在灣區生活需要年收入 35 萬才能打平</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=obRzfcvMshM">37 分鐘什麼是比特幣區塊鍵講的好清楚</a></p></li>
+<li><p><a class="reference external" href="https://baike.baidu.com/item/%E9%99%88%E5%85%89%E6%97%AD/2073052">陳光旭</a></p></li>
+<li><p>Adobe pdf reader go back using cross-reference: Alt + &lt;-</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=EiKK04Ht8QI">Don’t Be a Programmer</a></p>
+<ul>
+<li><p>Be a problem solver, creator, innovator. Programming is just a tool</p></li>
+<li><p>所以不要問放什麼語言在 resume 上比較容易進 google，學什麼語言比較賺錢</p></li>
+</ul>
+</li>
+<li><p>台灣網拍：everrich 昇恆昌免稅店，蝦皮，momo，PChome</p></li>
+<li><p><a class="reference external" href="https://youtu.be/kJGupYFaCGs?t=625">Ivy League Mentality:</a> perseverance, confidence, passion, ability to deal with stress</p></li>
+<li><p><a class="reference external" href="https://youtu.be/_p-yWkkF-FU?t=105">Me in My Wife’s Eyes</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=8ZhoeSaPF-k">如何保持動力</a></p>
+<ul>
+<li><p>保持 motivated 的關鍵就是建立「Internal Locus of Control」，相信和不斷告訴自己 I’m in control of my life。如果覺得成敗都來自外在原因，就會不自覺停止努力，停止嘗試</p></li>
+<li><p>小孩子解 puzzle 的實驗：解開後被告知是因為天生聰明的一組之後 motivation 較差。一個 sells 如果整天沒賣出東西之後是怪一些外在因素例如天氣，這個人比較不會在 sells team 久待</p></li>
+<li><p>建立 Internal Locus of Control：花時間心去解決問題，解決之後告訴自己這都是我的功勞，是因為我做了 xxx</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.wsj.com/articles/where-have-all-the-public-companies-gone-1510869125">美國上市公司在變少</a></p>
+<ul>
+<li><p>1996 年有 7322 家上市公司，到 2017 只剩 3671 家，Wilshire 5000 指數裡根本沒有 5000 支股票</p>
+<ul>
+<li><p>自從 late 90s 上市公司數量就一直減少</p></li>
+<li><p>1996 年有 845 家 IPO，到 2016 年只剩 128 家</p></li>
+<li><p>公司上市的動機變小了因為：</p>
+<ul>
+<li><p>公司比以前更容易從 VC，PE 拿到投資</p></li>
+<li><p>regulation 增加和各種股東訴訟</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>公司 IPO 的時間點也在改變</p>
+<ul>
+<li><p>平均 IPO 公司年齡從 1996 年的 12 歲到 2016 年變成 18 歲</p></li>
+<li><p>2017 平均 IPO 市值是 20 年前的 4 倍</p></li>
+<li><p>Amazon 1997 上市時才三歲，市值 600M</p></li>
+<li><p>Facebook 2012 上市時已經八歲，市值 100B</p></li>
+<li><p>Airbnb 和 Uber 也都拖了很久才上市</p>
+<ul>
+<li><p>microcap，small-cap，midcap 公司在慢慢消失</p></li>
+<li><p>很多成長股都跑到 PE 裡了，交易所買不到</p></li>
+<li><p>（所以 small-cap index 的漲幅才大不如前？）</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>public market 裡被動投資在增加，主動投資在減少</p>
+<ul>
+<li><p>2000 以來被動型的基金成長了 1.7T，主動型萎縮了 1.4T</p></li>
+<li><p>因為交易所的成長型股票少了，選股也變得不再重要</p></li>
+<li><p>以 research 為基礎的 discretionary trade 只佔目前交易量的 10%</p></li>
+<li><p>被動型的基金在交易量中佔比增加，強化了股票報酬間的相關性</p></li>
+<li><p>看起來分散的 portfolio 其實沒有以前分散。20 年前可以在 public market 構造的 profile 今天可能要加入 PE 才造的出來</p></li>
+</ul>
+</li>
+<li><p>emerging markets 現況</p>
+<ul>
+<li><p>投資選擇很少</p></li>
+<li><p>漲跌的 driving factor 是 fund flows，不是當地公司基本面</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="Writing-Python-Module-in-C++">
+<h1>Writing Python Module in C++<a class="headerlink" href="#Writing-Python-Module-in-C++" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=P-_kKCzqSn0">很擺爛的 youtube 教學</a></p></li>
+<li><p><a class="reference external" href="https://pyengr.readthedocs.io/en/latest/inter/bpy/index.html">很簡化的 boost python 筆記</a></p></li>
+</ul>
+</div>
+<div class="section" id="駕照到期日延到-12/31">
+<h1><a class="reference external" href="http://state.nj.us/mvc/pdf/about/FREQUENTLY%20ASKED%20QUESTIONS.pdf">駕照到期日延到 12/31</a><a class="headerlink" href="#駕照到期日延到-12/31" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="JupyterLab">
+<h1>JupyterLab<a class="headerlink" href="#JupyterLab" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Equation Numbering Not Working</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions">jupyter_contrib_nbextensions</a> 是一個所有 unofficial (classic) Jupyter notebook extension 的合集，裡面有 Equation Numbering</p></li>
+<li><p>但到 JupyterLab 上 :nbsphinx-math:<a href="#id2"><span class="problematic" id="id3">`</span></a>ref <a href="#id4"><span class="problematic" id="id5">`</span></a>會壞掉，只印出 (???)</p></li>
+<li><p>2020/9 為止還沒修看。看這個 <a class="reference external" href="https://github.com/jupyterlab/jupyterlab/issues/4039">issue</a></p></li>
+</ul>
+</li>
+<li><p>nbconvert to pdf</p>
+<ul>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/35077571/how-to-remove-heading-numbers-in-jupyter-during-pdf-conversion">No section numbers</a>：<code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">my</span> <span class="pre">heading</span> <span class="pre">{-}</span></code> 這樣 exported pdf 只會有 my heading，前面不會有數字 1.1.1</p></li>
+<li><p>cell content 置中：放在 <code class="docutils literal notranslate"><span class="pre">\begin{center}</span> <span class="pre">...</span> <span class="pre">\end{center}</span></code> block 裡</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://blog.ja-ke.tech/assets/jupyterlab-shortcuts/Shortcuts.png">Keyboard Shortcuts</a></p>
+<ul>
+<li><p>Toggle left area: Ctrl + B</p></li>
+<li><p>Close current tab: Alt + W</p></li>
+<li><p>Splitting a cell: Ctrl + Shift + -</p></li>
+<li><p>Switch tabs: Ctrl + Shift + ]</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="Youtube-Keyboard-Shortcuts">
+<h1><a class="reference external" href="https://sites.google.com/a/umich.edu/u-m-google-170816/accessibility/google-keyboard-shortcuts---youtube">Youtube Keyboard Shortcuts</a><a class="headerlink" href="#Youtube-Keyboard-Shortcuts" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>speed up/slow down: Shift + &gt;, Shift + &lt;</p></li>
+<li><p>caption on/off: c</p></li>
+<li><p>full screen: f</p></li>
+</ul>
+</div>
+<div class="section" id="Kinesis-Advantage2-Programming-the-Keyboard">
+<h1><a class="reference external" href="https://www.youtube.com/watch?v=I7tIcZKnPAY">Kinesis Advantage2 Programming the Keyboard</a><a class="headerlink" href="#Kinesis-Advantage2-Programming-the-Keyboard" title="Permalink to this headline">¶</a></h1>
+<p>把左手的 ctrl 改成 shift： 1. program-F12 （鍵盤最右上角） 1. 按一下 ctrl 1. 按一下 shift</p>
+</div>
+<div class="section" id="GitHub">
+<h1>GitHub<a class="headerlink" href="#GitHub" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/Uj6WWAqg0NY?t=194">條件搜尋</a></p>
+<ul>
+<li><p>in:name spring boot stars:&gt;3000</p></li>
+<li><p>in:readme</p></li>
+<li><p>in:description 微服務 language:java pushed:&gt;2019-09-03</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://youtu.be/HkphN8Js8AU?t=302">diff 不同版本</a>：在網址後面輸入 /compare</p></li>
+<li><p>Issue：留言區，feature/bug 追蹤系統，可以是 open/closed</p>
+<ul>
+<li><p>反應項目是否活躍的重要指標</p></li>
+</ul>
+</li>
+<li><p>Pull requests (pr)：貢獻項目</p></li>
+<li><p><a class="reference external" href="https://youtu.be/HkphN8Js8AU?t=607">Projects</a>：項目管理工具，像大看版，可以開 projects 在裡面加 to do list, doing list 等</p></li>
+<li><p>Insights：項目統計信息</p></li>
+<li><p>Settings：各種服務</p>
+<ul>
+<li><p>github.io 網站</p></li>
+<li><p>webhooks 事件觸發，例如一收到 pull request 就寄 email</p></li>
+<li><p>刪除 repo，publish 或轉 private</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=VzdU5GwZ47o">實用小技巧，快速鍵</a></p></li>
+<li><p>從 Teminal push 到 github（<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span></code> 和 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> 裡的 <code class="docutils literal notranslate"><span class="pre">-u</span></code> 都是第一次推送才需要）： <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">*</span>&#160;&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;test:</span> <span class="pre">push</span> <span class="pre">from</span> <span class="pre">code</span> <span class="pre">ocean&quot;</span>&#160;&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">github</span> <span class="pre">https://github.com/beginnerSC/misc.git</span>&#160;&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span>&#160;&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">github</span> <span class="pre">master</span></code></p></li>
+<li><p>Default branch name：</p>
+<ul>
+<li><p>創建一個新的 repo 時系統預設 default branch name 是 main，這樣就沒辦法 pull master。要改要去 Settings &gt; Repositories &gt; Repository default branch</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="Set-up-JupyterHub-on-Google-Cloud-Step-By-Step">
+<h1><a class="reference external" href="https://www.youtube.com/watch?v=Mk6ZHVIw0Xs">Set up JupyterHub on Google Cloud Step By Step</a><a class="headerlink" href="#Set-up-JupyterHub-on-Google-Cloud-Step-By-Step" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="JupyterLab-in-the-Cloud">
+<h1>JupyterLab in the Cloud<a class="headerlink" href="#JupyterLab-in-the-Cloud" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Notebooks.ai 掛掉之後只剩下<a class="reference external" href="https://www.dataschool.io/cloud-services-for-jupyter-notebook/?fbclid=IwAR316JuoHek2bAFjYEgvFH2XIJDtUMoaBNKCml7nusaZkOB0oTTKSnymeu0">一些選項</a></p></li>
+<li><p>免費的選項中最好的是 Binder，只是要學會配置環境</p></li>
+<li><p>其實 Binder 不是設計來這樣用的，最好還是研究怎麼在 Google Colab 上安裝 JupyterLab</p></li>
+<li><p>private project solution:</p>
+<ul>
+<li><p>CoCalc</p>
+<ul>
+<li><p>可以用 JupyterLab 打開（打開 settings 之後在最右下角）</p></li>
+<li><p>連 github 或 publish 或 pip install 需要取得 internet access，都是付費才能打開的功能</p></li>
+<li><p>但在 cocalc 本地端 Terminal 用 git 是可以的</p></li>
+<li><p>唯一的問題就是哪天 cocalc 如果又要倒，檔案只能一個一個下載（或者想辦法下載 .git 檔就可以了？）</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>public project solutions:</p>
+<ul>
+<li><p>Gitpod</p>
+<ul>
+<li><p>直接在一個 github repo 的網址列前面加上 <code class="docutils literal notranslate"><span class="pre">https://gitpod.io/#</span></code> 打開項目</p></li>
+<li><p>ipynb file 上按右鍵可以選 Open in Notebook Editor，編輯完在左邊 stage + commit 然後到右邊 push 到 github 上。但這個編輯器沒有 JupyterLab 好用</p></li>
+<li><p>free account 每個月有 50 小時的使用時間限制</p></li>
+<li><p>付費會員可以編輯使用時間變成每個月 100 小時並且可以開 private github projects</p></li>
+<li><p>gitpod 在打開 project 的時候會檢查此 project 是否 public，編輯完 commit 的時候不會</p></li>
+</ul>
+</li>
+<li><p>Kyso (read-only)</p>
+<ul>
+<li><p>像 Blog，讀者可以留言。Kyso 可以 render nb（nicely），也可以連 github public/private projects 還自動同步，但不能直接在 Kyso 編輯</p></li>
+<li><p>實測過和 GitHub 是同步的</p>
+<ul>
+<li><p>make sense 因為有 webhook（GitHub Repo -&gt; Settings -&gt; Webhooks），commit 的時候會自動觸發 Kyso 同步</p></li>
+</ul>
+</li>
+<li><p>authorize 的時候要選 all repo 才能連 private project</p></li>
+<li><p>Kyso 老記不住哪一個是 main file（然後就沒有 Files tab 可以按，也看不到任何 notebook），加 kyso.yaml 也沒用，README 裡的連結是最後是直接貼 README 在 Kyso 的連結才解決的</p>
+<ul>
+<li><p>進去之後自己進 Files tab 看所有 notebook</p></li>
+</ul>
+</li>
+<li><p>Code Hidden/Shown</p>
+<ul>
+<li><p>所有 nb 打開的時候預設是 Code Hidden，所有 input cell 都看不見。右上角可以選 Code Shown</p></li>
+<li><p>像這樣貼連結給人，對方打開的時候才是看的到 code 的：<a class="reference external" href="https://kyso.io/beginnerSC/misc/file/Piano.ipynb#code=shown">https://kyso.io/beginnerSC/misc/file/Piano.ipynb#code=shown</a></p></li>
+</ul>
+</li>
+<li><p>Kyso 沒辦法顯示 raw cell 不過本來就應該盡量避免 raw cell。nbviewer 能顯示可是會亂掉</p></li>
+<li><p>還是需要由 nbviewer 補足因為：</p>
+<ul>
+<li><p>手機平板上無法顯示 Files tab 也無法顯示 Code Hidden/Shown 的選單，這樣就沒辦法從 README 的連結找到其它 nb 了</p></li>
+<li><p>直接在 input cell 貼上的圖沒辦法顯示（GitHub 也不行），例如 <a class="reference external" href="https://nbviewer.jupyter.org/github/beginnerSC/misc/blob/master/Backprop.ipynb">Backprop.ipynb</a> 的圖，只有在 nbviewer 看的到</p></li>
+<li><p>一張圖如果要在 Kyso 看的見就要存成圖檔，像 <a class="reference external" href="https://nbviewer.jupyter.org/github/beginnerSC/misc/blob/master/Theory.ipynb">Theory.ipynb</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>nbviewer (read-only)</p>
+<ul>
+<li><p>缺點不是即時的，據說有 10 分鐘 delay（真的只有 10 分鐘嗎？）可以手動在 url 後面加上 <code class="docutils literal notranslate"><span class="pre">?flush_cache=true</span></code> 或 <code class="docutils literal notranslate"><span class="pre">?flush_cache=True</span></code> 有時候會有用（browser dependent）</p></li>
+<li><p>readme 裡的 url 是</p>
+<ul>
+<li><p>nbviewer：<a class="reference external" href="https://nbviewer.jupyter.org/github/beginnerSC/misc/tree/master/">https://nbviewer.jupyter.org/github/beginnerSC/misc/tree/master/</a></p></li>
+<li><p>Kyso：<a class="reference external" href="https://kyso.io/beginnerSC/misc/file/README.md">https://kyso.io/beginnerSC/misc/file/README.md</a></p></li>
+<li><p>Gitpod：<a class="reference external" href="https://gitpod.io/#https://github.com/beginnerSC/misc">https://gitpod.io/#https://github.com/beginnerSC/misc</a></p></li>
+<li><p>JupyterLab (Binder, launch from this repo)：<a class="reference external" href="https://mybinder.org/v2/gh/beginnerSC/misc/master?urlpath=lab">https://mybinder.org/v2/gh/beginnerSC/misc/master?urlpath=lab</a></p>
+<ul>
+<li><p>把 JupyterLab url 最後面的 <code class="docutils literal notranslate"><span class="pre">?urlpath=lab</span></code> 拿掉就變成普通的 binder link，用 Jupyter Notebook 打開</p></li>
+<li><p><a class="reference external" href="https://github.com/binder-examples/jupyterlab">這裡</a>有說明</p></li>
+<li><p>這個 repo 的 environment.yml 已經砍掉了。可以還是開但連 numpy 都沒有</p></li>
+</ul>
+</li>
+<li><p>Classic Jupyter Notebook (fast startup)：<a class="reference external" href="https://mybinder.org/v2/gh/beginnerSC/sandbox/master?urlpath=git-pull">https://mybinder.org/v2/gh/beginnerSC/sandbox/master?urlpath=git-pull</a>?repo=https://github.com/beginnerSC/misc</p></li>
+<li><p>JupyterLab (fast startup)：<a class="reference external" href="https://mybinder.org/v2/gh/beginnerSC/sandbox/master?urlpath=git-pull">https://mybinder.org/v2/gh/beginnerSC/sandbox/master?urlpath=git-pull</a>?repo=https://github.com/beginnerSC/misc%26amp%3Bbranch=master%26amp%3Burlpath=lab/tree/misc?Fautodecode</p>
+<ul>
+<li><p>那個 %26amp%3B 是 &amp; 的 encoding 但網址列認不得所以還是只能寫 %26amp%3B</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>public/private project solution</p>
+<ul>
+<li><p>Code Ocean</p>
+<ul>
+<li><p>可以用 JupyterLab 打開，JupyterLab 裡也有 internet access 可以用 Terminal push 到 github</p></li>
+<li><p>在 env 裡可以自己 install 需要的 package 如 numpy，scipy，pandas</p></li>
+<li><p>只能 import from public github repo（如果要 import private repo 要打開一瞬間）</p></li>
+<li><p>唯一的缺點是每個月十小時的計算時間限制</p></li>
+</ul>
+</li>
+<li><p>Binder</p>
+<ul>
+<li><p>可以用 JupyterLab 打開，JupyterLab 裡也有 internet access 可以用 Terminal push 到 github</p></li>
+<li><p>沒有給 local storage 所以每次改完一定要 commit + push 不然就不見了</p></li>
+<li><p>有一個小缺點就是 inactive 十分鐘 kernel 就會自己斷掉，不過有 offlinenotebook 就沒有影響了</p></li>
+<li><p>環境配置（from <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/config_files.html">Binder doc</a>）：</p>
+<ul>
+<li><p>如果只是要加 python package，可以用一個 requirements.txt 列下需要有哪些 python packages，像這樣： <code class="docutils literal notranslate"><span class="pre">numpy</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">scipy</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">pandas</span></code></p></li>
+<li><p>預設是安裝最新版，也可以指定版本例如 <code class="docutils literal notranslate"><span class="pre">seaborn==0.11.0</span></code></p></li>
+<li><p>加 C++ Kernel：</p>
+<ol class="arabic simple">
+<li><p>複製 <a class="reference external" href="https://github.com/jupyter-xeus/xeus-cling">xeus-cling repo</a> 裡的 environment.yml 放在這裡</p></li>
+<li><p>在 dependencies 下把需要的 python package 加進去</p></li>
+<li><p>一旦配置了 environment.yml，requirements.txt 會自動被乎略（更 general 的，一旦配置了 Dockerfile，requirements.txt 和 environment.yml 都會自動被乎略）</p></li>
+<li><p>更多細節看<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">這裡</a></p></li>
+</ol>
+</li>
+<li><p>Jupyterlab extension，例如 <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-toc">toc</a> 要新建在一個 postBuild file 寫 <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">labextension</span> <span class="pre">install</span> <span class="pre">&#64;jupyterlab/toc</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/jupyterlab/debugger">Python debugger</a> 同時需要用 conda 安裝 nodejs 和 xeus-python kernel 和 labextension &#64;jupyterlab/debugger，所以 environment.yml 和 postBuild 都要改</p></li>
+<li><p>postBuild</p>
+<ul>
+<li><p>postBuild 可以執行任何 bash commands</p></li>
+<li><p>用 postBuild 安裝 execution time labextension + （用 bash）去 nbextension folder 把這個功能打開的<a class="reference external" href="https://github.com/deshaw/jupyterlab-execute-time/blob/master/binder/postBuild">例子</a>（這個是 D. E. Shaw 的 repo）</p></li>
+<li><p>把 git add, commit, push 寫在一個 command 裡並放到 .bashrc 裡，在 postBuild 裡寫下這段：
+<code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">'\n#</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">commit</span> <span class="pre">and</span> <span class="pre">push</span> <span class="pre">in</span> <span class="pre">one</span> <span class="pre">command</span> <span class="pre">\n'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">echo</span> <span class="pre">'function</span> <span class="pre">cnp()</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">echo</span> <span class="pre">'</span>&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">add</span> <span class="pre">*</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">echo</span> <span class="pre">'</span>&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;beginnerSC&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">echo</span> <span class="pre">'</span>&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&quot;25188222+beginnerSC&#64;users.noreply.github.com&quot;</span> <span class="pre">'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">echo</span> <span class="pre">'</span>&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">&quot;update&quot;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">echo</span> <span class="pre">'</span>&#160;&#160;&#160; <span class="pre">git</span> <span class="pre">push</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">echo</span> <span class="pre">'}</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">'</span> <span class="pre">&gt;&gt;</span> <span class="pre">.bashrc</span></code></p></li>
+<li><p>但 push 還是需要敲 GitHub 密碼。如果要避免每次敲密碼應該永遠用 token pull（在 <a class="reference external" href="https://beginnersc.github.io">beginnersc.github.io</a> 用 “private” 登入）</p></li>
+</ul>
+</li>
+<li><p>最好不要照著 doc install 隨便改寫 environment.yml 和 postBuild。最穩定的辦法還是去找要安裝的 kernel 有沒有 binder link，照抄那個 repo 裡的配置</p></li>
+<li><p>如果要安裝 latex 沒辦法用 conda 安裝，打開 JupyterLab 再安裝也有權限問題（反正也留不下來），要用 apt.txt，參考 <a class="reference external" href="https://github.com/binder-examples/latex">binder-examples/latex</a>： <code class="docutils literal notranslate"><span class="pre">cron</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">pandoc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">dvipng</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ghostscript</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-fonts-recommended</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-generic-recommended</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-latex-base</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-latex-extra</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-latex-recommended</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-publishers</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-science</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-xetex</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">texlive-lang-chinese</span></code></p></li>
+<li><p>nbconvert to PDF 編譯中文：</p>
+<ul>
+<li><p>在 apt.txt 裡需要有 texlive-lang-chinese</p></li>
+<li><p>nbconvert 編譯 tex 檔時會用一個 template，要去修改</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">../../..</span> <span class="pre">-name</span> <span class="pre">&quot;article.tplx&quot;</span> <span class="pre">|</span> <span class="pre">sort</span></code></p></li>
+<li><p>會找出 <code class="docutils literal notranslate"><span class="pre">../../../srv/conda/envs/notebook/lib/python3.7/site-packages/nbconvert/templates/latex/article.tplx</span></code></p></li>
+<li><p>進到那個 folder 裡用 vim 修改，把 <code class="docutils literal notranslate"><span class="pre">\documentclass[11pt]{article}</span></code> 替換為 <code class="docutils literal notranslate"><span class="pre">\documentclass{article}</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">\usepackage{xeCJK}</span></code></p></li>
+<li><p>參考<a class="reference external" href="https://github.com/c1mone/Tensorflow-101/issues/4">這個 issue</a></p></li>
+<li><p>實測用 ctex 會把日期也編譯成中文，xeCJK 不會，所以在 template 裡 hard code 永遠用 xeCJK 就可以中英兩種文件都編</p></li>
+<li><p>有些繁體字沒有字型，例如「複」「裡」會編成亂碼，大扣分！</p></li>
+</ul>
+</li>
+<li><p>因為 template 不在 home 之下，要用 postBuild 每次 launch JupyterLab 的時候自動改（去看 sandbox-stable 裡的 postBuild）</p></li>
+</ul>
+</li>
+<li><p>開啟 Binder 所需時間</p>
+<ul>
+<li><p>每次 commit 之後第一次開會很慢，因為 binder 根據這些 config 生成了 Dockerfile 並且推送到 Docker Hub 上</p></li>
+<li><p>加了 c++ kernel 和幾個 python packages 之後 rebuild 竟然要半小時！</p></li>
+<li><p>如果用兩個 repo，一個存內容一個存配置好的環境會快很多（下面有更詳細的說明）</p></li>
+</ul>
+</li>
+<li><p>雖然不用自己手動配置但 kernel 在 <code class="docutils literal notranslate"><span class="pre">../../srv/conda/envs/notebook/share/jupyter/kernels</span></code></p></li>
+<li><p>xcpp 相關的執行檔在 <code class="docutils literal notranslate"><span class="pre">../../srv/conda/envs/notebook/bin</span></code></p></li>
+<li><p>配置 Dockerfile</p>
+<ul>
+<li><p>創建一個檔案名為 Dockerfile（no extension）放在 sandbox 裡</p></li>
+<li><p>一旦配置了 Dockerfile，requirements.txt 和 environment.yml 都會自動被乎略</p></li>
+<li><p><a class="reference external" href="https://github.com/beginnerSC/sandbox-latex">sandbox-latex</a> 裡的配置可以成功的 Export notebook as PDF。這個配置參考了：</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/binder-examples/minimal-dockerfile">Binder examples 裡的 minimal Dockerfile</a></p></li>
+<li><p><a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/install.html">nbconver installation</a> 裡有提到需要哪些 texlive package</p></li>
+<li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">JupyterLab installation</a></p></li>
+<li><p><a class="reference external" href="https://hub.docker.com/r/aslushnikov/latex-online/dockerfile">latex-online 的 Dockerfile</a></p>
+<ul>
+<li><p><a class="reference external" href="https://latexonline.cc/">Latex.Online</a> 是一個有付 API 的 online latex compiler</p></li>
+<li><p>更多 latex package 如果有需要可以到這個 Dockerfile 找</p></li>
+</ul>
+</li>
+<li><p>目前的配置只是照抄 Binder examples 裡的 minimal 然後把 latex-online Dockerfile 裡的 texlive package 只選需要的裝進去</p></li>
+</ul>
+</li>
+<li><p>用同樣的方法也成功灌了 cron（在 pandoc 上面多加一行 cron 就行了）但沒有 editor 所以還是沒辦法 <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-e</span></code></p></li>
+<li><p>有一個 <a class="reference external" href="https://jupyter-docker-stacks.readthedocs.io/en/latest/">Jupyter Docker Stacks</a> 裡有很多配好的 Dockerfile 可以參考，學怎麼配置自己要的 Dockerfile (網頁左上有 GitHub 連結)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>內容和環境分開配置在兩個 repo</p>
+<ul>
+<li><p>參考<a class="reference external" href="https://discourse.jupyter.org/t/how-to-reduce-mybinder-org-repository-startup-time/4956">這篇 post</a> 和作者的 <a class="reference external" href="https://github.com/choldgraf/binder-sandbox">env repo</a></p></li>
+<li><p>環境 repo 配置完成之後不需要經常更改，所以沒有每次 commit 完開啟 Binder 就重新 build Dockerfile 的問題</p></li>
+<li><p>內容是用一個 nbgitpuller load 到開機完成的 Binder 裡的</p></li>
+<li><p>所以在 environment.yml 裡需要指定安裝 nbgitpuller，還要在 postBuild 裡 enable（nbgitpuller 是一個 Jupyter server extension）</p></li>
+<li><p>content repo 裡不能有 environment.yml 等 config file，不然開一次 env repo 就會壞掉了，重新 commit rebuild 也沒用</p></li>
+<li><p>預設是用 Classic Jupyter Notebook 打開。如果要用 JupyterLab 打開，連結非常複雜，<a class="reference external" href="https://jupyterhub.github.io/nbgitpuller/link.html">nbgitpuller 的文檔</a>也沒寫清楚，不過<a class="reference external" href="https://edu.oggm.org/en/latest/user_content.html">這位老兄</a> figure out 了</p></li>
+<li><p>要從 Terminal commit content 的時候要先進到 content repo folder</p></li>
+</ul>
+</li>
+<li><p>nbgitpuller 可以 <a class="reference external" href="https://github.com/jupyterhub/nbgitpuller/issues/53">pull private project</a>：</p>
+<ul>
+<li><p>有兩個方法，一個是用 token，缺點是連結裡面會有 token，另一個是用一個 git proxy，看上面的連結討論</p></li>
+<li><p>要用 token 生成連結首先要知道 <a class="reference external" href="https://github.blog/2012-09-21-easier-builds-and-deployments-using-git-over-https-and-oauth/">git 怎麼用 token 直接 pull private project</a></p></li>
+<li><p>GitHub 登入後 generate 一個 token：Settings -&gt; Developer settings -&gt; Generate new token -&gt; 存在一個安全的地方</p>
+<ul>
+<li><p>token 不分 project，所以知道這個 token 的人就有所有 private project 的讀寫權限</p></li>
+<li><p>實測過用 token 打開的 JupyterLab 在 git push 的時候不需要再敲一次帳號密碼</p></li>
+</ul>
+</li>
+<li><p>最終 JupyterLab fast startup 連結是這樣的：<a class="reference external" href="https://mybinder.org/v2/gh/beginnerSC/sandbox-stable/master?urlpath=git-pull">https://mybinder.org/v2/gh/beginnerSC/sandbox-stable/master?urlpath=git-pull</a>?repo=https://<strong>TOKEN</strong>&#64;github.com/beginnerSC/<strong>PRIVATE_PROJECT</strong>%26amp%3Bbranch=master%26amp%3Burlpath=lab/tree/<strong>PRIVATE_PROJECT</strong>?autodecode</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, beginnerSC
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
