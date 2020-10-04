@@ -12,7 +12,6 @@ Welcome to MiscBeginnerSC's documentation!
    
    Backprop
    Bokeh
-   C++
    CPP
    DS and Algo
    Fun Math
@@ -22,8 +21,9 @@ Welcome to MiscBeginnerSC's documentation!
    Questions_c
    Questions_m
    Theory
-   Untitled
    
+.. toctree::
+   :maxdepth: 1   
    :caption: LC
    
    LC/19
