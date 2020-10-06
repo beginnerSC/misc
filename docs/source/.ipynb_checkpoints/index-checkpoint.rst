@@ -27,6 +27,7 @@ Welcome to MiscBeginnerSC's documentation!
    :caption: LC
    
    LC/19
+   LC/19 new
    LC/CPP
    LC/DP
    LC/Misc
