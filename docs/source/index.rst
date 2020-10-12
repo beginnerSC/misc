@@ -10,27 +10,43 @@ Welcome to MiscBeginnerSC's documentation!
    :maxdepth: 1
    :caption: Misc
    
-   Backprop
-   Bokeh
-   CPP
-   DS and Algo
-   Fun Math
-   GMM
-   Notes
-   Piano
-   Questions_c
-   Questions_m
-   Theory
-   
+   notes
+   piano
+   questions_c
+   questions_m
+
 .. toctree::
    :maxdepth: 1   
    :caption: LC
    
-   LC/19
-   LC/19 new
-   LC/CPP
-   LC/DP
-   LC/Misc
+   lc/19
+   lc/19_new
+   lc/cpp
+   lc/dp
+   lc/misc
+
+.. toctree::
+   :maxdepth: 1   
+   :caption: Stat, ML, DS
+
+   ds/backprop
+   ds/bokeh
+   ds/cloud
+   ds/gmm
+
+.. toctree::
+   :maxdepth: 1   
+   :caption: CS
+
+   cs/cpp
+   cs/ds_algo
+   
+.. toctree::
+   :maxdepth: 1   
+   :caption: Math
+
+   math/theory
+   math/fun
    
 
 Indices and tables
