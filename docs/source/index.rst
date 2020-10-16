@@ -30,9 +30,10 @@ Welcome to MiscBeginnerSC's documentation!
    :caption: Stat, ML, DS
 
    ds/backprop
-   ds/bokeh
    ds/cloud
    ds/gmm
+   ds/dash
+   ds/visualization
 
 .. toctree::
    :maxdepth: 1   
