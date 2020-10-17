@@ -31,8 +31,9 @@ Welcome to MiscBeginnerSC's documentation!
 
    ds/backprop
    ds/cloud
-   ds/gmm
    ds/dash
+   ds/gmm
+   ds/panel
    ds/visualization
 
 .. toctree::
