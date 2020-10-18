@@ -33,6 +33,7 @@ Welcome to MiscBeginnerSC's documentation!
    ds/cloud
    ds/dash
    ds/gmm
+   ds/ipywidgets
    ds/panel
    ds/visualization
 
