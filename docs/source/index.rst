@@ -36,6 +36,7 @@ Welcome to MiscBeginnerSC's documentation!
    ds/ipywidgets
    ds/panel
    ds/visualization
+   ds/voila
 
 .. toctree::
    :maxdepth: 1   
