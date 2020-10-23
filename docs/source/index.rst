@@ -49,8 +49,9 @@ Welcome to MiscBeginnerSC's documentation!
    :maxdepth: 1   
    :caption: Math
 
-   math/theory
    math/fun
+   math/merton_mom
+   math/theory
    
 
 Indices and tables
