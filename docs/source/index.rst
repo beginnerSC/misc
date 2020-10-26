@@ -30,7 +30,6 @@ Welcome to MiscBeginnerSC's documentation!
    :caption: Stat, ML, DS
 
    ds/backprop
-   ds/cloud
    ds/dash
    ds/gmm
    ds/ipywidgets
@@ -42,6 +41,7 @@ Welcome to MiscBeginnerSC's documentation!
    :maxdepth: 1   
    :caption: CS
 
+   cs/cloud
    cs/cpp
    cs/ds_algo
    
