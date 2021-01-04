@@ -24,6 +24,7 @@ Welcome to MiscBeginnerSC's documentation!
    lc/55
    lc/cpp
    lc/dp
+   lc/hr
    lc/misc
 
 .. toctree::
