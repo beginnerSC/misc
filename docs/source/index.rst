@@ -45,6 +45,7 @@ Welcome to MiscBeginnerSC's documentation!
 
    cs/cloud
    cs/cpp
+   cs/cpptest
    cs/ds_algo
    cs/huffman_coding
    
