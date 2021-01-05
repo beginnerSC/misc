@@ -48,6 +48,7 @@ Welcome to MiscBeginnerSC's documentation!
    cs/cpptest
    cs/ds_algo
    cs/huffman_coding
+   cs/huffman_coding_cpp
    
 .. toctree::
    :maxdepth: 1   
