@@ -26,10 +26,11 @@ deploy on heroku
 https://www.codingforentrepreneurs.com/blog/jupyter-production-server-on-docker-heroku
 
 
+Locally build the docker image of a binder and push to Docker Hub
 
 1. repo2docker a github repo (took 4 hours to build sandbox-stable)
-2. docker tag (ugly_long_tag_name):latest beginnersc/sandbox-stable:latest
-3. docker push beginnersc/sandbox-stable:latest
+2. $docker tag (ugly_long_tag_name):latest beginnersc/sandbox-stable:latest
+3. $docker push beginnersc/sandbox-stable:latest
 
 uploading image of size 8G
 
