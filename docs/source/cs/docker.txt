@@ -32,3 +32,6 @@ https://www.codingforentrepreneurs.com/blog/jupyter-production-server-on-docker-
 3. docker push beginnersc/sandbox-stable:latest
 
 uploading image of size 8G
+
+如果要得到 Dockerfile 要用 jupyter-repo2docker --debug https://github.com/beginnerSC/sandbox-stable
+
