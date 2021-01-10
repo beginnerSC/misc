@@ -24,3 +24,11 @@ share (need to log into Docker Hub)
 deploy on heroku
 
 https://www.codingforentrepreneurs.com/blog/jupyter-production-server-on-docker-heroku
+
+
+
+1. repo2docker a github repo (took 4 hours to build sandbox-stable)
+2. docker tag (ugly_long_tag_name):latest beginnersc/sandbox-stable:latest
+3. docker push beginnersc/sandbox-stable:latest
+
+uploading image of size 8G
