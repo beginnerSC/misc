@@ -22,6 +22,7 @@ Welcome to MiscBeginnerSC's documentation!
    lc/19
    lc/19_new
    lc/55
+   lc/6
    lc/cpp
    lc/dp
    lc/hr
