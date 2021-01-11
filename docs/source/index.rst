@@ -22,7 +22,6 @@ Welcome to MiscBeginnerSC's documentation!
    lc/19
    lc/19_new
    lc/55
-   lc/6
    lc/cpp
    lc/dp
    lc/hr
@@ -48,7 +47,6 @@ Welcome to MiscBeginnerSC's documentation!
    cs/cpp_cherno
    cs/cpp_test
    cs/ds_algo
-   cs/requests
    cs/huffman_coding
    cs/huffman_coding_cpp
    
