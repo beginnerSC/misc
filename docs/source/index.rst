@@ -52,7 +52,7 @@ Welcome to MiscBeginnerSC's documentation!
 
 .. toctree::
    :maxdepth: 1   
-   :caption: CS
+   :caption: Slides
 
    slides/od
 
