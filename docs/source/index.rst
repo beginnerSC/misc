@@ -49,7 +49,13 @@ Welcome to MiscBeginnerSC's documentation!
    cs/ds_algo
    cs/huffman_coding
    cs/huffman_coding_cpp
-   
+
+.. toctree::
+   :maxdepth: 1   
+   :caption: CS
+
+   slides/od
+
 .. toctree::
    :maxdepth: 1   
    :caption: Math
