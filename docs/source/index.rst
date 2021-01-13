@@ -54,7 +54,8 @@ Welcome to MiscBeginnerSC's documentation!
    :maxdepth: 1   
    :caption: Slides
 
-   slides/od
+   slides/od_export
+   slides/od_live
 
 .. toctree::
    :maxdepth: 1   
