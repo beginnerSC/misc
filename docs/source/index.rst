@@ -50,8 +50,9 @@ Welcome to MiscBeginnerSC's documentation!
    cs/ds_algo
    cs/huffman_coding
    cs/huffman_coding_cpp
-   cs/python
-
+   cs/python_advanced
+   cs/python_basic
+   
 .. toctree::
    :maxdepth: 1   
    :caption: Slides
