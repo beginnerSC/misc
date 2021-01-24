@@ -52,6 +52,7 @@ Welcome to MiscBeginnerSC's documentation!
    cs/huffman_coding_cpp
    cs/python_advanced
    cs/python_basic
+   cs/python_sample
    
 .. toctree::
    :maxdepth: 1   
