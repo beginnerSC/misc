@@ -27,6 +27,7 @@ Welcome to BeginnerSC's notes!
    lc/dp
    lc/hr
    lc/misc
+   lc/mine
 
 .. toctree::
    :maxdepth: 1   
