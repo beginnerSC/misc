@@ -69,7 +69,10 @@ Welcome to BeginnerSC's notes!
    math/fun
    math/merton_mom
    math/theory
-   
+
+.. toctree::
+
+    pycircle.rst
 
 Indices and tables
 ==================
