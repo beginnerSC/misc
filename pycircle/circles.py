@@ -13,11 +13,11 @@ def circle_area(r):
     Returns
     -------
     area : float
-        Area of the circle
+        Area of the circle.
     """
     
     if type(r) not in [int, float]:
-        raise TypeError("The radius must be a non-negative real number.")
+        raise TypeError("The radius must be int or float.")
     
     if r < 0:
         raise ValueError("The radius cannot be negative")
