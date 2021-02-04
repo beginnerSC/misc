@@ -71,8 +71,10 @@ Welcome to BeginnerSC's notes!
    math/theory
 
 .. toctree::
-
+    :caption: PyCircle API Reference
+    
     pycircle.rst
+    
 
 Indices and tables
 ==================
