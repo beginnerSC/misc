@@ -71,6 +71,7 @@ Welcome to BeginnerSC's notes!
    math/theory
 
 .. toctree::
+    :maxdepth: 1   
     :caption: PyCircle API Reference
     
     pycircle.rst
