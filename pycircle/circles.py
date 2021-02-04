@@ -3,7 +3,7 @@ from math import pi
 def circle_area(r):
     """Compute area of a circle.
     
-    The area of a circle with radius $r$ is $\pi r^2$. 
+    The area of a circle with radius :math:`r` is :math:`\pi r^2`. 
     
     Parameters
     ----------
