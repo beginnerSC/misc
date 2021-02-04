@@ -1,5 +1,5 @@
 
-PyCircle API Reference 1
+PyCircle API Reference 2
 ==========================================
 
 .. automodule:: pycircle
