@@ -49,6 +49,7 @@ Welcome to BeginnerSC's notes!
    cs/cpp_cherno
    cs/cpp_test
    cs/ds_algo
+   cs/github
    cs/huffman_coding
    cs/huffman_coding_cpp
    cs/python_advanced
