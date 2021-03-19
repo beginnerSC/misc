@@ -20,7 +20,6 @@ Welcome to BeginnerSC's notes!
    :caption: LC
    
    lc/19
-   lc/19_new
    lc/55
    lc/bttbass
    lc/cpp
@@ -28,6 +27,7 @@ Welcome to BeginnerSC's notes!
    lc/hr
    lc/misc
    lc/mine
+   lc/notes
 
 .. toctree::
    :maxdepth: 1   
