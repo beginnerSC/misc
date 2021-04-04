@@ -2,6 +2,7 @@ name: readthedocs
 channels:
   - conda-forge
 dependencies:
+  - python>=3
   - xeus-cling=0.10.0
   - pandoc
   - pip
