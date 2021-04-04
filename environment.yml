@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - xeus-cling=0.10.0
+  - pandoc
   - pip
   - pip: 
     - sphinx>=1.4
