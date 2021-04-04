@@ -37,7 +37,6 @@ Welcome to BeginnerSC's notes!
    ds/dash
    ds/gmm
    ds/ipywidgets
-   ds/minimax_c
    ds/minimax
    ds/panel
    ds/visualization
