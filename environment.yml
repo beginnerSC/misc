@@ -1,5 +1,10 @@
-name: xeus-cling-docs
+name: readthedocs
 channels:
   - conda-forge
 dependencies:
   - xeus-cling=0.10.0
+  - pip
+  - pip: 
+    - sphinx>=1.4
+    - ipykernel
+    - nbsphinx
