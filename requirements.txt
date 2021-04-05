@@ -1,4 +1,4 @@
-sphinx>=1.4
+sphinx==3.5.0
 ipykernel
 nbsphinx==0.8.1
 hvplot
