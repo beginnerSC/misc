@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to BeginnerSC's notes!
-==========================================
+==============================
 
 .. toctree::
    :maxdepth: 1
@@ -14,20 +14,6 @@ Welcome to BeginnerSC's notes!
    piano
    questions_c
    questions_m
-
-.. toctree::
-   :maxdepth: 1   
-   :caption: LC
-   
-   lc/19
-   lc/55
-   lc/bttbass
-   lc/cpp
-   lc/dp
-   lc/hr
-   lc/misc
-   lc/mine
-   lc/notes
 
 .. toctree::
    :maxdepth: 1   
@@ -57,6 +43,7 @@ Welcome to BeginnerSC's notes!
    cs/python_advanced
    cs/python_basic
    cs/python_sample
+   cs/leetcode
    
 .. toctree::
    :maxdepth: 1   
