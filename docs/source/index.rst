@@ -40,10 +40,10 @@ Welcome to BeginnerSC's notes!
    cs/github
    cs/huffman_coding
    cs/huffman_coding_cpp
+   cs/leetcode   
    cs/python_advanced
    cs/python_basic
    cs/python_sample
-   cs/leetcode
    
 .. toctree::
    :maxdepth: 1   
