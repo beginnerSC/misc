@@ -33,6 +33,7 @@ Welcome to BeginnerSC's notes!
    :maxdepth: 1   
    :caption: CS
 
+   cs/api
    cs/cloud
    cs/cpp_cherno
    cs/cpp_test
