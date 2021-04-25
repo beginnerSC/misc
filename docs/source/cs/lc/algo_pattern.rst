@@ -1,5 +1,5 @@
-[算法模板](https://github.com/greyireland/algorithm-pattern)
-==========
+`算法模板 <https://github.com/greyireland/algorithm-pattern>`_.
+===============================================================
 
 .. toctree::
    :maxdepth: 1
