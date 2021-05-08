@@ -27,6 +27,7 @@ Welcome to BeginnerSC's notes!
    ds/minimax_c   
    ds/minimax
    ds/panel
+   ds/ts
    ds/visualization
    ds/voila
 
