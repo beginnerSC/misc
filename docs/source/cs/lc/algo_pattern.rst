@@ -3,12 +3,12 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: Python
+   :caption: `Python <https://github.com/dashidhy/algorithm-pattern-python>`
    
    algo_pattern/quickstart_python
 
 .. toctree::
    :maxdepth: 1
-   :caption: C++
+   :caption: `C++ <https://github.com/binzi56/algorithm-pattern-c>`
    
    algo_pattern/quickstart_cpp
