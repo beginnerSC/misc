@@ -1,12 +1,12 @@
 `算法模板 <https://github.com/greyireland/algorithm-pattern>`_
 ==============================================================
 
-- `Python <https://github.com/dashidhy/algorithm-pattern-python>`
-- `C++ <https://github.com/binzi56/algorithm-pattern-c>`
+- `Python <https://github.com/dashidhy/algorithm-pattern-python>`_
+- `C++ <https://github.com/binzi56/algorithm-pattern-c>`_
 
 .. toctree::
    :maxdepth: 1
-   :caption: Python
+   :caption: `Python <https://github.com/dashidhy/algorithm-pattern-python>`_
    
    algo_pattern/quickstart_python
 
