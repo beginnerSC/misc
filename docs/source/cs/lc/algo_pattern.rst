@@ -6,7 +6,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: `Python <https://github.com/dashidhy/algorithm-pattern-python>`_
+   :caption: Python
    
    algo_pattern/quickstart_python
 
