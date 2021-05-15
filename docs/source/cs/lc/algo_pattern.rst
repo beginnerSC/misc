@@ -9,9 +9,11 @@
    :caption: Python
    
    algo_pattern/quickstart_python
+   algo_pattern/binary_tree_python
 
 .. toctree::
    :maxdepth: 1
    :caption: C++
    
    algo_pattern/quickstart_cpp
+   algo_pattern/binary_tree_cpp
