@@ -4,14 +4,13 @@
 - `Python <https://github.com/dashidhy/algorithm-pattern-python>`_
 - `C++ <https://github.com/binzi56/algorithm-pattern-c>`_
 
-* [C++](https://github.com/binzi56/algorithm-pattern-c)
-
 .. toctree::
    :maxdepth: 1
    :caption: Python
    
    algo_pattern/quickstart_python
    algo_pattern/binary_tree_python
+   algo_pattern/linked_list_python
 
 .. toctree::
    :maxdepth: 1
@@ -19,3 +18,4 @@
    
    algo_pattern/quickstart_cpp
    algo_pattern/binary_tree_cpp
+   algo_pattern/linked_list_cpp
