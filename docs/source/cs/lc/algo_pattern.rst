@@ -4,7 +4,7 @@
 - `Python <https://github.com/dashidhy/algorithm-pattern-python>`_
 - `C++ <https://github.com/binzi56/algorithm-pattern-c>`_
 
-* [C++](https://github.com/binzi56/algorithm-pattern-c>)
+* [C++](https://github.com/binzi56/algorithm-pattern-c)
 
 .. toctree::
    :maxdepth: 1
