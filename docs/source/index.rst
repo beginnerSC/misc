@@ -60,6 +60,7 @@ Welcome to BeginnerSC's notes!
 
    math/formula
    math/fun
+   math/implementation
    math/merton_mom
    math/theory
 
