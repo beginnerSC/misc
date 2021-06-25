@@ -58,7 +58,6 @@ Welcome to BeginnerSC's notes!
    :maxdepth: 1   
    :caption: Math
 
-   math/formula
    math/fun
    math/implementation
    math/merton_mom
