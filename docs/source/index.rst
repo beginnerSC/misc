@@ -38,10 +38,9 @@ Welcome to BeginnerSC's notes!
    cs/cloud
    cs/cpp_cherno
    cs/cpp_test
-   cs/ds_algo
+   cs/ds_algo_cpp
+   cs/ds_algo_python
    cs/github
-   cs/huffman_coding
-   cs/huffman_coding_cpp
    cs/leetcode   
    cs/python_advanced
    cs/python_basic
