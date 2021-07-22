@@ -78,8 +78,6 @@ master_doc = 'index'
 nbsphinx_allow_errors = True
 nbsphinx_execute = 'never'
 # nbsphinx_prompt_width = 0
-nbsphinx_input_prompt = ''
-nbsphinx_output_prompt = ''
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
