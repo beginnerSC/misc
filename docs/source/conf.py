@@ -77,7 +77,7 @@ html_static_path = ['_static']
 master_doc = 'index'
 nbsphinx_allow_errors = True
 nbsphinx_execute = 'never'
-nbsphinx_prompt_width = 0
+# nbsphinx_prompt_width = 0
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
