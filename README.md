@@ -1,5 +1,7 @@
 # Miscellaneous Jupyter Notebooks
 
+[![Documentation Status](https://readthedocs.org/projects/miscbeginnersc/badge/?version=latest)](https://miscbeginnersc.readthedocs.io/en/latest/?badge=latest)
+
 Open with one of the following: 
 
 * [Read the Docs](https://miscbeginnersc.readthedocs.io/en/latest/)
