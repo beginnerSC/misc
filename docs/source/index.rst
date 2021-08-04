@@ -10,7 +10,6 @@ Welcome to BeginnerSC's notes!
    :maxdepth: 1
    :caption: Misc
    
-   api
    notes
    piano
    questions_c
