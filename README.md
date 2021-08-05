@@ -1,7 +1,6 @@
 # Miscellaneous Jupyter Notebooks
 
 [![Documentation Status](https://readthedocs.org/projects/miscbeginnersc/badge/?version=latest)](https://miscbeginnersc.readthedocs.io/en/latest/?badge=latest)
-[![image](http://img.shields.io/pypi/v/pyminimax.svg)](https://pypi.python.org/pypi/pyminimax/)
 
 Open with one of the following: 
 
