@@ -97,6 +97,10 @@ except __builtin__.Exception:
 
 __version__ = _libswig.__version__
 
+def my_range(n):
+    return _libswig.my_range(n)
+my_range = _libswig.my_range
+
 def square(x):
     return _libswig.square(x)
 square = _libswig.square
