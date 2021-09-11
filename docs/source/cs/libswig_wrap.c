@@ -2994,16 +2994,16 @@ static swig_module_info swig_module = {swig_types, 1, 0, 0, 0, 0};
 #endif
 
 /*-----------------------------------------------
-              @(target):= _lib_swig.so
+              @(target):= _libswig.so
   ------------------------------------------------*/
 #if PY_VERSION_HEX >= 0x03000000
-#  define SWIG_init    PyInit__lib_swig
+#  define SWIG_init    PyInit__libswig
 
 #else
-#  define SWIG_init    init_lib_swig
+#  define SWIG_init    init_libswig
 
 #endif
-#define SWIG_name    "_lib_swig"
+#define SWIG_name    "_libswig"
 
 #define SWIGVERSION 0x030012 
 #define SWIG_VERSION SWIGVERSION
@@ -3013,7 +3013,7 @@ static swig_module_info swig_module = {swig_types, 1, 0, 0, 0, 0};
 #define SWIG_as_voidptrptr(a) ((void)SWIG_as_voidptr(*a),(void**)(a)) 
 
 
-#include "lib_swig.h"
+#include "libswig.h"
 
 
 SWIGINTERN swig_type_info*

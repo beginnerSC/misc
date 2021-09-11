@@ -9,12 +9,12 @@ if _swig_python_version_info >= (2, 7, 0):
     def swig_import_helper():
         import importlib
         pkg = __name__.rpartition('.')[0]
-        mname = '.'.join((pkg, '_lib_swig')).lstrip('.')
+        mname = '.'.join((pkg, '_libswig')).lstrip('.')
         try:
             return importlib.import_module(mname)
         except ImportError:
-            return importlib.import_module('_lib_swig')
-    _lib_swig = swig_import_helper()
+            return importlib.import_module('_libswig')
+    _libswig = swig_import_helper()
     del swig_import_helper
 elif _swig_python_version_info >= (2, 6, 0):
     def swig_import_helper():
@@ -22,20 +22,20 @@ elif _swig_python_version_info >= (2, 6, 0):
         import imp
         fp = None
         try:
-            fp, pathname, description = imp.find_module('_lib_swig', [dirname(__file__)])
+            fp, pathname, description = imp.find_module('_libswig', [dirname(__file__)])
         except ImportError:
-            import _lib_swig
-            return _lib_swig
+            import _libswig
+            return _libswig
         try:
-            _mod = imp.load_module('_lib_swig', fp, pathname, description)
+            _mod = imp.load_module('_libswig', fp, pathname, description)
         finally:
             if fp is not None:
                 fp.close()
         return _mod
-    _lib_swig = swig_import_helper()
+    _libswig = swig_import_helper()
     del swig_import_helper
 else:
-    import _lib_swig
+    import _libswig
 del _swig_python_version_info
 
 try:
@@ -95,15 +95,15 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
-__version__ = _lib_swig.__version__
+__version__ = _libswig.__version__
 
 def square(x):
-    return _lib_swig.square(x)
-square = _lib_swig.square
+    return _libswig.square(x)
+square = _libswig.square
 
 def cube(x):
-    return _lib_swig.cube(x)
-cube = _lib_swig.cube
+    return _libswig.cube(x)
+cube = _libswig.cube
 # This file is compatible with both classic and new-style classes.
 
 

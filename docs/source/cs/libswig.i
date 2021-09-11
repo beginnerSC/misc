@@ -1,6 +1,6 @@
-%module lib_swig
+%module libswig
 %{
-#include "lib_swig.h"
+#include "libswig.h"
 %}
 #define __version__ "0.0.1";
 double square(double x);
