@@ -95,6 +95,7 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
+__version__ = _lib_swig.__version__
 
 def square(x):
     return _lib_swig.square(x)
