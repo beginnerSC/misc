@@ -62,6 +62,7 @@ Welcome to BeginnerSC's notes!
    math/fun
    math/implementation
    math/merton_mom
+   math/sem
    math/theory
 
 .. toctree::
