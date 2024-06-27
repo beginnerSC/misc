@@ -3,7 +3,6 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: Python
    
    花花醬/tree
    ..花花醬/divide_and_conquer
