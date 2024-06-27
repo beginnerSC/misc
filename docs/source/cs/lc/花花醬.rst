@@ -1,0 +1,17 @@
+`花花醬 <https://zxi.mytechroad.com/blog/leetcode-problem-categories/>`_
+========================================================================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Python
+   
+   花花醬/tree
+   ..花花醬/divide_and_conquer
+   花花醬/list
+   ..花花醬/bst
+   ..花花醬/graph
+   ..花花醬/search
+   ..花花醬/binary_search
+   ..花花醬/two_pointers
+   ..花花醬/advanced
+   ..花花醬/dp
