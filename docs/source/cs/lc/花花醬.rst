@@ -6,7 +6,7 @@
    :caption: Python
    
    花花醬/tree
-   ..花花醬/divide_and_conquer
+   花花醬/divide_and_conquer
    花花醬/list
    ..花花醬/bst
    ..花花醬/graph
