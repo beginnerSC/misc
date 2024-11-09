@@ -63,6 +63,7 @@ Welcome to BeginnerSC's notes!
    math/implementation
    math/merton_mom
    math/sem
+   math/theory
 
 .. toctree::
     :maxdepth: 1   
