@@ -1,0 +1,1 @@
+cd D:/pyscripts/misc & poetry run jupyter lab
