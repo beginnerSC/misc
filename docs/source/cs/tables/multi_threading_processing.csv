@@ -1,0 +1,6 @@
+Multithreading,Multiprocessing
+light weight,"heavy, more memory overhead"
+share memory,isolated
+easy to communicate,hard
+"safety concern (race condition, deadlocks)",safe
+good for I/O bound tasks,good for CPU bound tasks
