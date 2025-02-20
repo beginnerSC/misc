@@ -1,0 +1,8 @@
+Thread 1,Thread 2," ",Integer value
+,,,0
+read value,,←,0
+,read value,←,0
+increase value,,,0
+,increase value,,0
+write back,,→,1
+,write back,→,1
