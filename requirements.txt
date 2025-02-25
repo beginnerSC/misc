@@ -4,3 +4,4 @@ sphinx-copybutton
 ipykernel
 nbsphinx
 sphinx-rtd-theme
+pydata-sphinx-theme
