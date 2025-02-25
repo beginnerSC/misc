@@ -70,8 +70,8 @@ exclude_patterns = []
 # import sphinx_rtd_theme
 # html_theme = 'sphinx_rtd_theme'
 
-import pydata-sphinx-theme
-html_theme = 'pydata-sphinx-theme'
+import pydata_sphinx_theme
+html_theme = 'pydata_sphinx_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
