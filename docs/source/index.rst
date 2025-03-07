@@ -39,6 +39,7 @@ Welcome to BeginnerSC's notes!
    cs/cloud
    cs/cpp_cherno
    cs/cpp_test
+   cs/cpp_test
    cs/cython
    cs/ds_algo_cpp
    cs/ds_algo_python
