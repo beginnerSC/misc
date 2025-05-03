@@ -37,9 +37,9 @@ Welcome to BeginnerSC's notes!
    :caption: CS
 
    cs/cloud
+   cs/cpp_advanced
    cs/cpp_cherno
    cs/cpp_test
-   cs/cpp_y_bar
    cs/cython
    cs/ds_algo_cpp
    cs/ds_algo_python
