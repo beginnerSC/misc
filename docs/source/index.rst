@@ -45,20 +45,20 @@ Welcome to BeginnerSC's notes!
    cs/ds_algo_cpp
    cs/ds_algo_python
    cs/github
-   cs/leetcode   
+   cs/leetcode
    cs/python_advanced
    cs/python_basic
    cs/python_sample
    
 .. toctree::
-   :maxdepth: 1   
+   :maxdepth: 1
    :caption: Slides
 
    slides/od_export
    slides/od_live
 
 .. toctree::
-   :maxdepth: 1   
+   :maxdepth: 1
    :caption: Math
 
    math/fun
