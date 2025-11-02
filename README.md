@@ -9,7 +9,6 @@
 ![2022 Yearly Heatmap](yearly_heatmaps/2022.png?ts=10022025)
 ![2021 Yearly Heatmap](yearly_heatmaps/2021.png?ts=10022025)
 ![2020 Yearly Heatmap](yearly_heatmaps/2020.png?ts=10022025)
-![2019 Yearly Heatmap](yearly_heatmaps/2019.png?ts=10022025)
 
 
 Open with one of the following: 
