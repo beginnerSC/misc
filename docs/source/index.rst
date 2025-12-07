@@ -38,6 +38,7 @@ Welcome to BeginnerSC's notes!
 
    cs/cloud
    cs/cpp_advanced
+   cs/cpp_ai
    cs/cpp_cherno
    cs/cpp_python
    cs/cpp_test
