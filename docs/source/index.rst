@@ -66,7 +66,7 @@ Welcome to BeginnerSC's notes!
    math/implementation
    math/interest_rate_modeling
    math/merton_mom
-   math/rates_print
+   math/rates_vol_modeling_overview_nbsphinx
    math/sem
    math/theory
 
