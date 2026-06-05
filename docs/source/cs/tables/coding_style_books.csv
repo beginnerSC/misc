@@ -1,0 +1,37 @@
+Topic,Book Title,Authors,Amazon Rating,Votes
+General,Clean Code,Robert C. Martin,4.7,6765
+,Clean Architecture,Robert C. Martin,4.6,4023
+,The Pragmatic Programmer (2nd Ed),"David Thomas, Andrew Hunt",4.8,3587
+,Code Complete,Steve McConnell,4.6,1349
+,Refactoring,Martin Fowler,4.7,1212
+,,,,
+C++,Effective Modern C++,Scott Meyers,4.6,1173
+,Effective C++,Scott Meyers,4.6,552
+,Effective STL,Scott Meyers,4.5,179
+,More Effective C++,Scott Meyers,4.2,148
+,Accelerated C++,"Andrew Koenig, Barbara E. Moo",4.2,315
+,Design Patterns in Modern C++,Dmitri Nesteruk,3.5,28
+,,,,
+Python,Fluent Python,Luciano Ramalho,4.7,785
+,Architecture Patterns with Python,"Harry Percival, Bob Gregory",4.6,560
+,Effective Python,Brett Slatkin,4.7,442
+,Clean Code in Python,Mariano Anaya,4.6,146
+,The Hitchhiker's Guide to Python,"Kenneth Reitz, Tanya Schlusser",4.3,150
+,Mastering Python Design Patterns,"Kamon Ayeva, Sakis Kasampalis",4.2,62
+,Python Architecture Patterns,Jaime Buelta,4.0,25
+,Learning Python Design Patterns,Gennadiy Zlobin,3.9,23
+,Python Programming with Design Patterns,James W. Cooper,3.2,7
+,,,,
+Design Pattern,Design Patterns,"Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",4.7,2822
+,Domain-Driven Design,Eric Evans,"4.6 ",1563
+,Head First Design Patterns,"Eric Freeman, Elisabeth Robson",4.7,1393
+,Patterns of Enterprise Application Architecture,Martin Fowler,4.5,883
+,Refactoring to Patterns,Joshua Kerievsky,4.6,136
+,"Agile Software Development, Principles, Patterns, and Practices ",Robert C. Martin,4.6,129
+,,,,
+Testing,Unit Testing Principles Practices and Patterns,Vladimir Khorikov,4.7,234
+,Working Effectively with Legacy Code,Michael Feathers,4.5,734
+,Test Driven Development: By Example,Kent Beck,4.5,532
+,Growing Object-Oriented Software Guided by Tests,"Steve Freeman, Nat Pryce",4.5,291
+,Python Testing with pytest (2nd Ed),Brian Okken,4.5,105
+,Modern C++ Programming with Test-Driven Development,Jeff Langr,4.4,87

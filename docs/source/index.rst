@@ -37,6 +37,7 @@ Welcome to BeginnerSC's notes!
    :caption: CS
 
    cs/cloud
+   cs/coding_style
    cs/cpp_advanced
    cs/cpp_ai
    cs/cpp_cherno
