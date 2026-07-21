@@ -4,6 +4,7 @@
 
 
 ![2025 Yearly Heatmap](yearly_heatmaps/2025.png?ts=10022025)
+![2025 Yearly Heatmap](yearly_heatmaps/2025.png?ts=10022025)
 ![2024 Yearly Heatmap](yearly_heatmaps/2024.png?ts=10022025)
 ![2023 Yearly Heatmap](yearly_heatmaps/2023.png?ts=10022025)
 ![2022 Yearly Heatmap](yearly_heatmaps/2022.png?ts=10022025)
