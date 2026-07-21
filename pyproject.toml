@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 pandas = "^2.2.3"
 pre-commit = "^4.3.0"
+jupyterlab = "^4.6.1"
 
 
 [build-system]

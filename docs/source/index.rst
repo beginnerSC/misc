@@ -36,6 +36,7 @@ Welcome to BeginnerSC's notes!
    :maxdepth: 1   
    :caption: CS
 
+   cs/ai
    cs/cloud
    cs/coding_style
    cs/cpp_advanced
