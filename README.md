@@ -3,7 +3,7 @@
 [![Documentation Status](https://readthedocs.org/projects/miscbeginnersc/badge/?version=latest)](https://miscbeginnersc.readthedocs.io/en/latest/?badge=latest)
 
 
-![2025 Yearly Heatmap](yearly_heatmaps/2025.png?ts=10022025)
+![2026 Yearly Heatmap](yearly_heatmaps/2026.png?ts=10022025)
 ![2025 Yearly Heatmap](yearly_heatmaps/2025.png?ts=10022025)
 ![2024 Yearly Heatmap](yearly_heatmaps/2024.png?ts=10022025)
 ![2023 Yearly Heatmap](yearly_heatmaps/2023.png?ts=10022025)
